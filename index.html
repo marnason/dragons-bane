@@ -1534,7 +1534,8 @@ function clickSwapImg() {}
 <style>
 html { background: #000; }
 body         { cursor: url(cursor.cur); scrollbar-track-color: #000000; scrollbar-arrow-color: #000000; scrollbar-face-color: #000000; scrollbar-highlight-color: #000000; scrollbar-3dlight-color: #000000; scrollbar-shadow-color: #000000; scrollbar-darkshadow-color: #000000 }
-body { margin: 0; min-width: 1024px; min-height: 805px; overflow: auto; font-family: Georgia, "Times New Roman", serif; }
+body { margin: 0; min-width: 1024px; min-height: 100vh; display: grid; place-items: center; overflow: auto; font-family: Georgia, "Times New Roman", serif; }
+#game-container { position: relative; width: 1024px; height: 920px; }
 a, input[type="button"], img[onclick] { cursor: pointer; }
 input        { cursor: url(cursor.cur) }
 textarea     { cursor: url(cursor.cur); box-sizing: border-box; width: 874px; height: 199px; resize: none; overflow: auto; }
@@ -1589,6 +1590,7 @@ document.onmousedown=click
 </script>
 </head>
 <body onload="startGame()" topmargin="0" leftmargin="0" bgcolor="#000000" text="#FFFFFF">
+<div id="game-container">
 <form name="game"> 
  <!-- Spans start here -->
  <!-- Titlebar -->
@@ -1989,5 +1991,6 @@ document.onmousedown=click
  size="-1">
  <!--Hidden inputs end-->
 </form>
-
+</div>
+</body>
 </html>
