@@ -1536,10 +1536,9 @@ function clickSwapImg() {}
 html { background: #000; }
 body         { cursor: url(cursor.cur); scrollbar-track-color: #000000; scrollbar-arrow-color: #000000; scrollbar-face-color: #000000; scrollbar-highlight-color: #000000; scrollbar-3dlight-color: #000000; scrollbar-shadow-color: #000000; scrollbar-darkshadow-color: #000000 }
 body { margin: 0; min-width: 1024px; min-height: 805px; overflow: auto; font-family: Georgia, "Times New Roman", serif; }
-button, input, textarea { font: inherit; }
 a, input[type="button"], img[onclick] { cursor: pointer; }
 input        { cursor: url(cursor.cur) }
-textarea     { cursor: url(cursor.cur) }
+textarea     { cursor: url(cursor.cur); box-sizing: border-box; width: 874px; height: 199px; resize: none; overflow: auto; }
 scrollbar    { cursor: url(cursor.cur) }
 </style>
 <bgsound src="bgmusic.wav" loop="-1">
@@ -1836,9 +1835,7 @@ document.onmousedown=click
  <img border="0" name="imgbad" src="auto.png" width="205" height="205">
  </span>
  <!-- Buttons (Attack, Heal & Walk) -->
- <span style="position: absolute; left: 0; top: 212; width: 950; height: 27">
-	<p>&nbsp;
- </p>
+ <span style="position: absolute; left: 0; top: 230; width: 950; height: 27">
  <table width="1025" cellspacing="0" cellpadding="0">
   <tr>
    <td align="center" width="241" valign="top">
