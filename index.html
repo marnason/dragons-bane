@@ -20,7 +20,6 @@ function startGame() {
 				Reflect.get(target, property)
 		}
 	})
-	Object.defineProperty(document, 'game', { configurable: true, value: game })
 	chooseName()
 }
 
@@ -58,39 +57,39 @@ function opponent() {
 var bigrandum = Math.round(Math.random() * 20)
 var randum1 = Math.round(Math.random() * 2)
 var randum2 = Math.round(Math.random() * 3)
-var yourlevel = parseFloat(document.game.level.value)
+var yourlevel = parseFloat(game.level.value)
 
 var randum = randum1 + randum2 + (yourlevel * 2)
-var yourlife = parseFloat(document.game.life.value)
-var cash = parseFloat(document.game.money.value)
-var yourattack = parseFloat(document.game.attackdamage.value) 
+var yourlife = parseFloat(game.life.value)
+var cash = parseFloat(game.money.value)
+var yourattack = parseFloat(game.attackdamage.value)
 	
-if (document.game.name.value == 'null') {
+if (game.name.value == 'null') {
 	alert('You have to write a name in the box. :/')
 	name()
 	return false
 }
-if (document.game.badguy.value == 'White Tiger') {
-	if (document.game.badlife.value > 1) {
+if (game.badguy.value == 'White Tiger') {
+	if (game.badlife.value > 1) {
 		return false
 	}
 }
-if (document.game.badguy.value == 'Demon') {
-	if (document.game.badlife.value > 1) {
+if (game.badguy.value == 'Demon') {
+	if (game.badlife.value > 1) {
 		return false
 	}
 }
-if (document.game.badguy.value == 'Shotokahn') {
-	if (document.game.badlife.value > 1) {
+if (game.badguy.value == 'Shotokahn') {
+	if (game.badlife.value > 1) {
 		return false
 	}
 }
 if (yourlevel == 1) {
-	document.game.storyline.value = "As soon as you leave the gates of your city you are attacked by monsters.  Your guards are frightened because they have never seen creatures like these so you pull out your sword and fight with them.  They remind you of the monsters that were created by the late mad scientist Baldo that you defeated 10 years ago."
+	game.storyline.value = "As soon as you leave the gates of your city you are attacked by monsters.  Your guards are frightened because they have never seen creatures like these so you pull out your sword and fight with them.  They remind you of the monsters that were created by the late mad scientist Baldo that you defeated 10 years ago."
 }
 if (bigrandum == 18) {
-	document.game.money.value = Math.round(cash - (cash * .09))
-	document.game.f2.value = "A thief stole " + Math.round(cash * .09) + " ± from you."
+	game.money.value = Math.round(cash - (cash * .09))
+	game.f2.value = "A thief stole " + Math.round(cash * .09) + " ± from you."
 }
 if (1 > yourlife) {
 	parent.close()
@@ -98,905 +97,905 @@ if (1 > yourlife) {
 }
 // 10001
 	if (randum == 2) {
-	document.game.badguy.value = "Wild Cat"
-	document.game.enemyattack.value = 3
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 11
-	document.game.imgbad.src = "../Monsters/WildCat.bmp"
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Nature"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Wild Cat"
+	game.enemyattack.value = 3
+	game.enemyarmor.value = 0
+	game.badlife.value = 11
+	game.imgbad.src = "../Monsters/WildCat.bmp"
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Nature"
+	game.badspecial.value = "None"
 	}
 	 if (randum == 3) {
-	document.game.badguy.value = "Zombie"
-	document.game.enemyattack.value = 5
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 15
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Zombie"
+	game.enemyattack.value = 5
+	game.enemyarmor.value = 0
+	game.badlife.value = 15
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 	if (randum == 4) {
-	document.game.badguy.value = "Goblin Shaman"
-	document.game.enemyattack.value = 4
-	document.game.enemyarmor.value = 1
-	document.game.badlife.value = 13
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = ""
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Goblin Shaman"
+	game.enemyattack.value = 4
+	game.enemyarmor.value = 1
+	game.badlife.value = 13
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = ""
+	game.badspecial.value = "None"
 	}
 	if (randum == 5) {
-	document.game.badguy.value = "Wolf"
-	document.game.enemyattack.value = 6
-	document.game.enemyarmor.value = 1
-	document.game.badlife.value = 20
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Nature"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Wolf"
+	game.enemyattack.value = 6
+	game.enemyarmor.value = 1
+	game.badlife.value = 20
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Nature"
+	game.badspecial.value = "None"
 	}
 	if (randum == 6) {
-	document.game.badguy.value = "Veteran"
-	document.game.enemyattack.value = 7
-	document.game.enemyarmor.value = 2
-	document.game.badlife.value = 24
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"	
-	document.game.badtype.value = ""
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Veteran"
+	game.enemyattack.value = 7
+	game.enemyarmor.value = 2
+	game.badlife.value = 24
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = ""
+	game.badspecial.value = "None"
 	}
 	if (randum == 7) {
-	document.game.badguy.value = "Skeleton"
-	document.game.enemyattack.value = 6
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 32
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Nature"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Skeleton"
+	game.enemyattack.value = 6
+	game.enemyarmor.value = 0
+	game.badlife.value = 32
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Nature"
+	game.badspecial.value = "None"
 	}
 	if (randum == 8) {
-	document.game.badguy.value = "Shadow"
-	document.game.enemyattack.value = 8
-	document.game.enemyarmor.value = 3
-	document.game.badlife.value = 40
-	document.game.yourhumor.value = " why him??? "
-	document.game.item1.value = ""
-	document.game.item2.value = ""	
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = ""
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Shadow"
+	game.enemyattack.value = 8
+	game.enemyarmor.value = 3
+	game.badlife.value = 40
+	game.yourhumor.value = " why him??? "
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = ""
+	game.badspecial.value = "None"
 	}
 	if (randum == 9) {
-	document.game.badguy.value = "Ooze"
-	document.game.enemyattack.value = 7
-	document.game.enemyarmor.value = 3
-	document.game.badlife.value = 41
-	document.game.yourhumor.value = "Damn,hope I win..."
-	document.game.item1.value = ""
-	document.game.item2.value = ""	
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = ""
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Ooze"
+	game.enemyattack.value = 7
+	game.enemyarmor.value = 3
+	game.badlife.value = 41
+	game.yourhumor.value = "Damn,hope I win..."
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = ""
+	game.badspecial.value = "None"
 	}
 	if (randum == 10) {
-	document.game.badguy.value = "Pirate"
-	document.game.enemyattack.value = 12
-	document.game.enemyarmor.value = 2
-	document.game.badlife.value = 48
-	document.game.yourhumor.value = "Not to Easy..."
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Pirate"
+	game.enemyattack.value = 12
+	game.enemyarmor.value = 2
+	game.badlife.value = 48
+	game.yourhumor.value = "Not to Easy..."
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 	if (randum == 11) {
-	document.game.badguy.value = "Wraith"
-	document.game.enemyattack.value = 9
-	document.game.enemyarmor.value = 5
-	document.game.badlife.value = 39
-	document.game.yourhumor.value = "Damn!!!"
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Vice Boss"
-	document.game.badtype.value = ""
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Wraith"
+	game.enemyattack.value = 9
+	game.enemyarmor.value = 5
+	game.badlife.value = 39
+	game.yourhumor.value = "Damn!!!"
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Vice Boss"
+	game.badtype.value = ""
+	game.badspecial.value = "None"
 	}
 if (yourlevel > 2){
 	if (randum == 12) {
-	document.game.badguy.value = "Minotaur"
-	document.game.enemyattack.value = 13
-	document.game.enemyarmor.value = 4
-	document.game.badlife.value = 54
-	document.game.yourhumor.value = "Ohh my god...."
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = ""
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Minotaur"
+	game.enemyattack.value = 13
+	game.enemyarmor.value = 4
+	game.badlife.value = 54
+	game.yourhumor.value = "Ohh my god...."
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = ""
+	game.badspecial.value = "None"
 	}
 	if (randum == 13) {
-	document.game.badguy.value = "Gog"
-	document.game.enemyattack.value = 12
-	document.game.enemyarmor.value = 2
-	document.game.badlife.value = 50
-	document.game.yourhumor.value = "Good humor"
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Nature"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Gog"
+	game.enemyattack.value = 12
+	game.enemyarmor.value = 2
+	game.badlife.value = 50
+	game.yourhumor.value = "Good humor"
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Nature"
+	game.badspecial.value = "None"
 	}
 	if (randum == 14) {
-	document.game.badguy.value = "Giant"
-	document.game.enemyattack.value = 16
-	document.game.enemyarmor.value = 5
-	document.game.badlife.value = 80
-	document.game.yourhumor.value = "ohh man..." 
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Nature"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Giant"
+	game.enemyattack.value = 16
+	game.enemyarmor.value = 5
+	game.badlife.value = 80
+	game.yourhumor.value = "ohh man..."
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Nature"
+	game.badspecial.value = "None"
 	}
 	if (randum == 15) {
-	document.game.badguy.value = "Sea Salamander"
-	document.game.enemyattack.value = 16
-	document.game.enemyarmor.value = 4
-	document.game.badlife.value = 69
-	document.game.yourhumor.value = "Damn,this is hard"
-	document.game.item1.value = ""
-	document.game.item2.value = ""	
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Nature"	
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Sea Salamander"
+	game.enemyattack.value = 16
+	game.enemyarmor.value = 4
+	game.badlife.value = 69
+	game.yourhumor.value = "Damn,this is hard"
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Nature"
+	game.badspecial.value = "None"
 	}
 	if (randum == 16) {
-	document.game.badguy.value = "Pit Fiend"
-	document.game.enemyattack.value = 18
-	document.game.enemyarmor.value = 3
-	document.game.badlife.value = 72
-	document.game.yourhumor.value = "Damn,hope I win..."
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Vice Boss"
-	document.game.badtype.value = ""
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Pit Fiend"
+	game.enemyattack.value = 18
+	game.enemyarmor.value = 3
+	game.badlife.value = 72
+	game.yourhumor.value = "Damn,hope I win..."
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Vice Boss"
+	game.badtype.value = ""
+	game.badspecial.value = "None"
 	}
 }
 
 	if (randum == 17) {
-	document.game.badguy.value = "Giant Turtle"
-	document.game.enemyattack.value = 20
-	document.game.enemyarmor.value = 6
-	document.game.badlife.value = 80
-	document.game.yourhumor.value = "not him..." 
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Nature"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Giant Turtle"
+	game.enemyattack.value = 20
+	game.enemyarmor.value = 6
+	game.badlife.value = 80
+	game.yourhumor.value = "not him..."
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Nature"
+	game.badspecial.value = "None"
 	}
 	if (randum == 18) {
-	document.game.life.value = Math.round(yourlife * .40)
-	document.game.badguy.value = "Cobra"
-	document.game.enemyattack.value = 16
-	document.game.enemyarmor.value = 8
-	document.game.badlife.value = 70
-	document.game.f2.value = "The Cobra poisened you. You lost " + Math.round(yourlife * .15) + " hit points."
-	document.game.item1.value = "The Green Amulet"
-	document.game.item2.value = ""
-	document.game.explaneline.value = " The Green Amulet is the most normal Amulet to get from a Copra!"
-	document.game.imgamulet.src = "../amulet/Green.bmp"
-	document.game.badspecial.value = "Spit danger water"
-	document.game.badlevel.value = "Vice Boss"
-	document.game.badtype.value = "Nature"
+	game.life.value = Math.round(yourlife * .40)
+	game.badguy.value = "Cobra"
+	game.enemyattack.value = 16
+	game.enemyarmor.value = 8
+	game.badlife.value = 70
+	game.f2.value = "The Cobra poisened you. You lost " + Math.round(yourlife * .15) + " hit points."
+	game.item1.value = "The Green Amulet"
+	game.item2.value = ""
+	game.explaneline.value = " The Green Amulet is the most normal Amulet to get from a Copra!"
+	game.imgamulet.src = "../amulet/Green.bmp"
+	game.badspecial.value = "Spit danger water"
+	game.badlevel.value = "Vice Boss"
+	game.badtype.value = "Nature"
 	}
 	if (randum == 19) {
-	document.game.badguy.value = "Mummy"
-	document.game.enemyattack.value = 19
-	document.game.enemyarmor.value = 1
-	document.game.badlife.value = 80
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badspecial.value = "None"
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = ""
+	game.badguy.value = "Mummy"
+	game.enemyattack.value = 19
+	game.enemyarmor.value = 1
+	game.badlife.value = 80
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badspecial.value = "None"
+	game.badlevel.value = "Normal"
+	game.badtype.value = ""
 	}
 	if (randum == 20) {
-	document.game.badguy.value = "Gargoyle"
-	document.game.enemyattack.value = 18
-	document.game.enemyarmor.value = 5
-	document.game.badlife.value = 90
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badspecial.value = "None"
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = ""
+	game.badguy.value = "Gargoyle"
+	game.enemyattack.value = 18
+	game.enemyarmor.value = 5
+	game.badlife.value = 90
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badspecial.value = "None"
+	game.badlevel.value = "Normal"
+	game.badtype.value = ""
 	}
 	if (randum == 21) {
-	document.game.badguy.value = "Doom Knight"
-	document.game.enemyattack.value = 21
-	document.game.enemyarmor.value = 8
-	document.game.badlife.value = 110
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Vice Boss"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Doom Knight"
+	game.enemyattack.value = 21
+	game.enemyarmor.value = 8
+	game.badlife.value = 110
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Vice Boss"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 	if (randum > 22) {
-	document.game.badguy.value = "Ogre"
-	document.game.enemyattack.value = 24
-	document.game.enemyarmor.value = 5
-	document.game.badlife.value = 100
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Ogre"
-	document.game.badspecial.value = "Fart to hes ememy dies"
+	game.badguy.value = "Ogre"
+	game.enemyattack.value = 24
+	game.enemyarmor.value = 5
+	game.badlife.value = 100
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Ogre"
+	game.badspecial.value = "Fart to hes ememy dies"
 	}
 	if (randum > 23) {
-	document.game.badguy.value = "Efreet"
-	document.game.enemyattack.value = 22
-	document.game.enemyarmor.value = 3
-	document.game.badlife.value = 95
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badtype.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Efreet"
+	game.enemyattack.value = 22
+	game.enemyarmor.value = 3
+	game.badlife.value = 95
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badtype.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
 	}
 	if (randum == 24) {
-	document.game.life.value = yourlife - 6
-	document.game.f2.value = "Ouch!!! You hit a trap. Lost 6 hit points."
+	game.life.value = yourlife - 6
+	game.f2.value = "Ouch!!! You hit a trap. Lost 6 hit points."
 	}
 	if (randum == 25) {
-	document.game.badguy.value = "Hell Hound"
-	document.game.enemyattack.value = 26
-	document.game.enemyarmor.value = 5
-	document.game.badlife.value = 112
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = "Fire"
+	game.badguy.value = "Hell Hound"
+	game.enemyattack.value = 26
+	game.enemyarmor.value = 5
+	game.badlife.value = 112
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
+	game.badtype.value = "Fire"
 	}
 	if (randum == 26) {
-	document.game.badguy.value = "Ent"
-	document.game.enemyattack.value = 26
-	document.game.enemyarmor.value = 4
-	document.game.badlife.value = 126
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badtype.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Ent"
+	game.enemyattack.value = 26
+	game.enemyarmor.value = 4
+	game.badlife.value = 126
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badtype.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
 	}
 	if (randum == 27) {
-	document.game.money.value = cash + 17
-	document.game.f1.value = "You found 17 Gold"
+	game.money.value = cash + 17
+	game.f1.value = "You found 17 Gold"
 	}
 	if (randum == 28) {
-	document.game.badguy.value = "Vampire"
-	document.game.enemyattack.value = 29
-	document.game.enemyarmor.value = 3
-	document.game.badlife.value = 104
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badtype.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "Get blood"
+	game.badguy.value = "Vampire"
+	game.enemyattack.value = 29
+	game.enemyarmor.value = 3
+	game.badlife.value = 104
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badtype.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "Get blood"
 	}
 	if (randum == 29)  {
-	document.game.badguy.value = "Dragon Worm"
-	document.game.enemyattack.value = 34
-	document.game.enemyarmor.value = 9
-	document.game.badlife.value = 141
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = ""
+	game.badguy.value = "Dragon Worm"
+	game.enemyattack.value = 34
+	game.enemyarmor.value = 9
+	game.badlife.value = 141
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badspecial.value = "None"
+	game.badtype.value = ""
 	}
 	if (randum == 30) {
-	document.game.badguy.value = "Abomination"
-	document.game.enemyattack.value = 33
-	document.game.enemyarmor.value = 3
-	document.game.badlife.value = 180
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = ""
+	game.badguy.value = "Abomination"
+	game.enemyattack.value = 33
+	game.enemyarmor.value = 3
+	game.badlife.value = 180
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
+	game.badtype.value = ""
 	}
 	if (randum == 31) {
-	document.game.life.value = Math.round(yourlife * .70)
-	document.game.f2.value = "Ouch!! You hit a trap. lost " + Math.round(yourlife * .30) + " hit points."
+	game.life.value = Math.round(yourlife * .70)
+	game.f2.value = "Ouch!! You hit a trap. lost " + Math.round(yourlife * .30) + " hit points."
 	}
 	if (randum == 32) {
-	document.game.badguy.value = "Lizard"
-	document.game.enemyattack.value = 31
-	document.game.enemyarmor.value = 5
-	document.game.badlife.value = 156
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "Scream"
-	document.game.badtype.value = ""
+	game.badguy.value = "Lizard"
+	game.enemyattack.value = 31
+	game.enemyarmor.value = 5
+	game.badlife.value = 156
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "Scream"
+	game.badtype.value = ""
 	}
 	if (randum == 33) {
-	document.game.badguy.value = "Devil"
-	document.game.enemyattack.value = 89
-	document.game.enemyarmor.value = 8
-	document.game.badlife.value = 192
-	document.game.f2.value = "The Devil poisened you. You lost " + Math.round(yourlife * .15) + " hit points."
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badspecial.value = "Kill whit fire"
-	document.game.badtype.value = "Fire"
+	game.badguy.value = "Devil"
+	game.enemyattack.value = 89
+	game.enemyarmor.value = 8
+	game.badlife.value = 192
+	game.f2.value = "The Devil poisened you. You lost " + Math.round(yourlife * .15) + " hit points."
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badspecial.value = "Kill whit fire"
+	game.badtype.value = "Fire"
 	}
 	if (randum == 34) {
-	document.game.badguy.value = "Earth Elemental"
-	document.game.enemyattack.value = 31
-	document.game.enemyarmor.value = 8
-	document.game.badlife.value = 110
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = "Earth"
+	game.badguy.value = "Earth Elemental"
+	game.enemyattack.value = 31
+	game.enemyarmor.value = 8
+	game.badlife.value = 110
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
+	game.badtype.value = "Earth"
 	}
 	if (randum == 35) {
-	document.game.badguy.value = "Air Elemental"
-	document.game.enemyattack.value = 31
-	document.game.enemyarmor.value = 8
-	document.game.badlife.value = 108
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "Air"
-	document.game.badtype.value = "Nature"
+	game.badguy.value = "Air Elemental"
+	game.enemyattack.value = 31
+	game.enemyarmor.value = 8
+	game.badlife.value = 108
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "Air"
+	game.badtype.value = "Nature"
 	}
 	if (randum == 36) {
-	document.game.badguy.value = "Water Elemental"
-	document.game.enemyattack.value = 29
-	document.game.enemyarmor.value = 8
-	document.game.badlife.value = 118
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.explaneline.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "Water"
-	document.game.badtype.value = "Water"
+	game.badguy.value = "Water Elemental"
+	game.enemyattack.value = 29
+	game.enemyarmor.value = 8
+	game.badlife.value = 118
+	game.item1.value = ""
+	game.item2.value = ""
+	game.explaneline.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "Water"
+	game.badtype.value = "Water"
 	}
 	if (randum == 37) {
-	document.game.badguy.value = "Mega Ant"
-	document.game.enemyattack.value = 38
-	document.game.enemyarmor.value = 12
-	document.game.badlife.value = 128
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = "Nature"
+	game.badguy.value = "Mega Ant"
+	game.enemyattack.value = 38
+	game.enemyarmor.value = 12
+	game.badlife.value = 128
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
+	game.badtype.value = "Nature"
 	}
 	if (randum == 38) {
-	document.game.badguy.value = "Tornado"
-	document.game.enemyattack.value = 40
-	document.game.enemyarmor.value = 16
-	document.game.badlife.value = 180
-	document.game.item1.value = "The Tornado Stone"
-	document.game.item2.value = ""
-	document.game.explaneline.value = "The Tornado Stone is the most normal Stone to get from the Tornado, it is just normal."
-	document.game.badlevel.value = "Boss"
-	document.game.badspecial.value = "Spin Tornado's"
-	document.game.badtype.value = "Earth"
+	game.badguy.value = "Tornado"
+	game.enemyattack.value = 40
+	game.enemyarmor.value = 16
+	game.badlife.value = 180
+	game.item1.value = "The Tornado Stone"
+	game.item2.value = ""
+	game.explaneline.value = "The Tornado Stone is the most normal Stone to get from the Tornado, it is just normal."
+	game.badlevel.value = "Boss"
+	game.badspecial.value = "Spin Tornado's"
+	game.badtype.value = "Earth"
 	}
 	if (randum == 39) {
-	document.game.badguy.value = "Bone Dragon"
-	document.game.enemyattack.value = 42
-	document.game.enemyarmor.value = 11
-	document.game.badlife.value = 165
-	document.game.imgbad.src = "../Monsters/BoneDragon.bmp"
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = "Nature"
+	game.badguy.value = "Bone Dragon"
+	game.enemyattack.value = 42
+	game.enemyarmor.value = 11
+	game.badlife.value = 165
+	game.imgbad.src = "../Monsters/BoneDragon.bmp"
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
+	game.badtype.value = "Nature"
 	}
 	if (randum == 40) {
-	document.game.life.value = Math.round(yourlife * .70)
-	document.game.f2.value = "Ouch!! You hit a trap. Lost " + Math.round(yourlife * .40) + " hit points."
+	game.life.value = Math.round(yourlife * .70)
+	game.f2.value = "Ouch!! You hit a trap. Lost " + Math.round(yourlife * .40) + " hit points."
 	}
 	if (randum == 41) {
-	document.game.badguy.value = "Black Dragon"
-	document.game.enemyattack.value = 50
-	document.game.enemyarmor.value = 12
-	document.game.badlife.value = 190
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = "Nature"
+	game.badguy.value = "Black Dragon"
+	game.enemyattack.value = 50
+	game.enemyarmor.value = 12
+	game.badlife.value = 190
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
+	game.badtype.value = "Nature"
 	}
 	if (randum == 42) {
-	document.game.badguy.value = "Juggernaut"
-	document.game.enemyattack.value = 52
-	document.game.enemyarmor.value = 8
-	document.game.badlife.value = 200
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = "Stone"
+	game.badguy.value = "Juggernaut"
+	game.enemyattack.value = 52
+	game.enemyarmor.value = 8
+	game.badlife.value = 200
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
+	game.badtype.value = "Stone"
 	}
 	if (randum == 43) {
-	document.game.badguy.value = "Skeleton Warrior"
-	document.game.enemyattack.value = 48
-	document.game.enemyarmor.value = 6
-	document.game.badlife.value = 180
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = "Nature"
+	game.badguy.value = "Skeleton Warrior"
+	game.enemyattack.value = 48
+	game.enemyarmor.value = 6
+	game.badlife.value = 180
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
+	game.badtype.value = "Nature"
 	}
 	if (randum == 44) {
-	document.game.badguy.value = "Warlock"
-	document.game.enemyattack.value = 51
-	document.game.enemyarmor.value = 9
-	document.game.badlife.value = 190
-	document.game.item1.value = ""
-	document.game.item2.value = ""	
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = ""
+	game.badguy.value = "Warlock"
+	game.enemyattack.value = 51
+	game.enemyarmor.value = 9
+	game.badlife.value = 190
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
+	game.badtype.value = ""
 	}
 	if (randum == 45) {
-	document.game.badguy.value = "Satyr"
-	document.game.enemyattack.value = 55
-	document.game.enemyarmor.value = 10
-	document.game.badlife.value = 205
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = ""
+	game.badguy.value = "Satyr"
+	game.enemyattack.value = 55
+	game.enemyarmor.value = 10
+	game.badlife.value = 205
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badspecial.value = "None"
+	game.badtype.value = ""
 	}
 	if (randum == 46) {
-	document.game.badguy.value = "Golem"
-	document.game.enemyattack.value = 56
-	document.game.enemyarmor.value = 20
-	document.game.badlife.value = 145
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = ""
+	game.badguy.value = "Golem"
+	game.enemyattack.value = 56
+	game.enemyarmor.value = 20
+	game.badlife.value = 145
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
+	game.badtype.value = ""
 	}
 	if (randum == 47) {
-	document.game.badguy.value = "Follower of Ra"
-	document.game.enemyattack.value = 58
-	document.game.enemyarmor.value = 9
-	document.game.badlife.value = 190
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
-	document.game.badtype.value = ""
+	game.badguy.value = "Follower of Ra"
+	game.enemyattack.value = 58
+	game.enemyarmor.value = 9
+	game.badlife.value = 190
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
+	game.badtype.value = ""
 	}
 	if (randum == 48) {
-	document.game.badguy.value = "Swamp Beast"
-	document.game.enemyattack.value = 58
-	document.game.enemyarmor.value = 5
-	document.game.badlife.value = 250
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badtype.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Swamp Beast"
+	game.enemyattack.value = 58
+	game.enemyarmor.value = 5
+	game.badlife.value = 250
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badtype.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
 	}
 	if (randum == 49) {
-	document.game.money.value = cash - 49
-	document.game.badguy.value = "Burglar"
-	document.game.enemyattack.value = 21
-	document.game.enemyarmor.value = 2
-	document.game.badlife.value = 60
-	document.game.f2.value = "The Burglar stole some money from you."
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badspecial.value = "None"
+	game.money.value = cash - 49
+	game.badguy.value = "Burglar"
+	game.enemyattack.value = 21
+	game.enemyarmor.value = 2
+	game.badlife.value = 60
+	game.f2.value = "The Burglar stole some money from you."
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badspecial.value = "None"
 	}
 		if (randum == 50) {
-	document.game.money.value = cash - 49
-	document.game.f2.value = "A thief stole 49 ± from you."
-	document.game.badguy.value = "Something"
-	document.game.enemyattack.value = 60
-	document.game.enemyarmor.value = 2
-	document.game.badlife.value = 100
-	document.game.item1.value = "The Thunder Stone"
-	document.game.item2.value = ""
-	document.game.explaneline.value = "The Something get the name 'Something', becase hes name is to evil to say. The Thunder Stone is the third best stone in the game."
-	document.game.imgbad.src = "../Monsters/Something.bmp"
-	document.game.badlevel.value = "Vice Boss"
-	document.game.badspecial.value = "?"
-	document.game.badtype.value = "?"
+	game.money.value = cash - 49
+	game.f2.value = "A thief stole 49 ± from you."
+	game.badguy.value = "Something"
+	game.enemyattack.value = 60
+	game.enemyarmor.value = 2
+	game.badlife.value = 100
+	game.item1.value = "The Thunder Stone"
+	game.item2.value = ""
+	game.explaneline.value = "The Something get the name 'Something', becase hes name is to evil to say. The Thunder Stone is the third best stone in the game."
+	game.imgbad.src = "../Monsters/Something.bmp"
+	game.badlevel.value = "Vice Boss"
+	game.badspecial.value = "?"
+	game.badtype.value = "?"
 	}
 		if (randum == 51) {
-	document.game.badguy.value = "Samurai"
-	document.game.enemyattack.value = 61
-	document.game.enemyarmor.value = 8
-	document.game.badlife.value = 120
-	document.game.item1.value = "Samurai Sword"
-	document.game.item2.value = ""
-	document.game.imgbad.src = "../Monsters/auto.bmp"
-	document.game.imgweapon.src = "../Weapons/samurai.bmp"
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "Heal"
+	game.badguy.value = "Samurai"
+	game.enemyattack.value = 61
+	game.enemyarmor.value = 8
+	game.badlife.value = 120
+	game.item1.value = "Samurai Sword"
+	game.item2.value = ""
+	game.imgbad.src = "../Monsters/auto.bmp"
+	game.imgweapon.src = "../Weapons/samurai.bmp"
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Human"
+	game.badspecial.value = "Heal"
 	}
 		if (randum == 52) {
-	document.game.badguy.value = "Ninja"
-	document.game.enemyattack.value = 61
-	document.game.enemyarmor.value = 8
-	document.game.badlife.value = 122
-	document.game.item1.value = "Sword +/4"
-	document.game.item2.value = ""
-	document.game.imgweapon.src = "../Weapons/Sword+4.bmp"
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Ninja"
+	game.enemyattack.value = 61
+	game.enemyarmor.value = 8
+	game.badlife.value = 122
+	game.item1.value = "Sword +/4"
+	game.item2.value = ""
+	game.imgweapon.src = "../Weapons/Sword+4.bmp"
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 			if (randum == 53) {
-	document.game.badguy.value = "Villager"
-	document.game.enemyattack.value = 62
-	document.game.enemyarmor.value = 9
-	document.game.badlife.value = 110
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Vice boss"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Villager"
+	game.enemyattack.value = 62
+	game.enemyarmor.value = 9
+	game.badlife.value = 110
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Vice boss"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 			if (randum == 54) {
-	document.game.badguy.value = "Knight"
-	document.game.enemyattack.value = 65
-	document.game.enemyarmor.value = 10
-	document.game.badlife.value = 300
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "Kill fast"
+	game.badguy.value = "Knight"
+	game.enemyattack.value = 65
+	game.enemyarmor.value = 10
+	game.badlife.value = 300
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badtype.value = "Human"
+	game.badspecial.value = "Kill fast"
 	}
 			if (randum == 55) {
-	document.game.badguy.value = "Captain"
-	document.game.enemyattack.value = 62
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 203
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Captain"
+	game.enemyattack.value = 62
+	game.enemyarmor.value = 0
+	game.badlife.value = 203
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 			if (randum == 56) {
-	document.game.badguy.value = "Murderer"
-	document.game.enemyattack.value = 66
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 223
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Murderer"
+	game.enemyattack.value = 66
+	game.enemyarmor.value = 0
+	game.badlife.value = 223
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 			if (randum == 57) {
-	document.game.badguy.value = "Herukian Rider"
-	document.game.enemyattack.value = 66
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 300
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "Flee"
+	game.badguy.value = "Herukian Rider"
+	game.enemyattack.value = 66
+	game.enemyarmor.value = 0
+	game.badlife.value = 300
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Human"
+	game.badspecial.value = "Flee"
 	}
 			if (randum == 58) {
-	document.game.badguy.value = "Wizard"
-	document.game.enemyattack.value = 67
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 255
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Wizard"
+	game.enemyattack.value = 67
+	game.enemyarmor.value = 0
+	game.badlife.value = 255
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 			if (randum == 59) {
-	document.game.badguy.value = "Warrior"
-	document.game.enemyattack.value = 68
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 290
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Warrior"
+	game.enemyattack.value = 68
+	game.enemyarmor.value = 0
+	game.badlife.value = 290
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 			if (randum == 60) {
-	document.game.badguy.value = "General"
-	document.game.enemyattack.value = 69
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 299
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "General"
+	game.enemyattack.value = 69
+	game.enemyarmor.value = 0
+	game.badlife.value = 299
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 			if (randum == 61) {
-	document.game.badguy.value = "Boogyman"
-	document.game.enemyattack.value = 69
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 299
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badtype.value = "Undead"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Boogyman"
+	game.enemyattack.value = 69
+	game.enemyarmor.value = 0
+	game.badlife.value = 299
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badtype.value = "Undead"
+	game.badspecial.value = "None"
 	}
 			if (randum == 62) {
-	document.game.badguy.value = "Crystal"
-	document.game.enemyattack.value = 72
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 300
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Nature"
-	document.game.badspecial.value = "None"
+	game.badguy.value = "Crystal"
+	game.enemyattack.value = 72
+	game.enemyarmor.value = 0
+	game.badlife.value = 300
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Nature"
+	game.badspecial.value = "None"
 	}
 			if (randum == 63) {
-	document.game.badguy.value = "Ice Dragon"
-	document.game.enemyattack.value = 78
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 309
-	document.game.item1.value = "The Ice Sword"
-	document.game.item2.value = "The Blue Stone"
-	document.game.explaneline.value = "The Ice Sword is special don to the Ice Dragon, so watch out... The Blue Stone is the second badest Magic Stone in this game."
-	document.game.imgstone.src = "../magic%20stone/Blue.bmp"
-	document.game.yourattack.value = "70"
-	document.game.badlevel.value = "Normal"
-	document.game.badtype.value = "Nature"
-	document.game.badspecial.value = "Ice Fire"
+	game.badguy.value = "Ice Dragon"
+	game.enemyattack.value = 78
+	game.enemyarmor.value = 0
+	game.badlife.value = 309
+	game.item1.value = "The Ice Sword"
+	game.item2.value = "The Blue Stone"
+	game.explaneline.value = "The Ice Sword is special don to the Ice Dragon, so watch out... The Blue Stone is the second badest Magic Stone in this game."
+	game.imgstone.src = "../magic%20stone/Blue.bmp"
+	game.yourattack.value = "70"
+	game.badlevel.value = "Normal"
+	game.badtype.value = "Nature"
+	game.badspecial.value = "Ice Fire"
 	}
 }
 // 11000
 	function attacker() {
-	document.game.f1.value = ""
-	document.game.f2.value = ""
-	var swordbonus = parseFloat(document.game.swordbonus.value)
-	var armorbonus = parseFloat(document.game.armorbonus.value)
-	var shieldbonus = parseFloat(document.game.shieldbonus.value)
-	var amuletbonus = parseFloat(document.game.amuletbonus.value)
-	var ringbonus = parseFloat(document.game.ringbonus.value)
+	game.f1.value = ""
+	game.f2.value = ""
+	var swordbonus = parseFloat(game.swordbonus.value)
+	var armorbonus = parseFloat(game.armorbonus.value)
+	var shieldbonus = parseFloat(game.shieldbonus.value)
+	var amuletbonus = parseFloat(game.amuletbonus.value)
+	var ringbonus = parseFloat(game.ringbonus.value)
 	var randum = Math.round(Math.random() * 20)
 	var randum1 = Math.round(Math.random() * 40)
-	var yougethit = parseFloat(document.game.armorclass.value)
-	var hegethit = parseFloat(document.game.enemyarmor.value)
-	var hurted = parseFloat(document.game.enemyattack.value)
-	var enemylife = parseFloat(document.game.badlife.value)
-	var yourattack = parseFloat(document.game.attackdamage.value)
-	var yourlife = parseFloat(document.game.life.value)
-	var enemyattack = parseFloat(document.game.enemyattack.value)
-	var yourexperience = parseFloat(document.game.experience.value)
-	var yourlevel = parseFloat(document.game.level.value)
-	var yourmoney = parseFloat(document.game.money.value)
-	var enemyarmor = parseFloat(document.game.enemyarmor.value)
-	var baldoo = parseFloat(document.game.baldo.value)
-	var story = parseFloat(document.game.story.value)
+	var yougethit = parseFloat(game.armorclass.value)
+	var hegethit = parseFloat(game.enemyarmor.value)
+	var hurted = parseFloat(game.enemyattack.value)
+	var enemylife = parseFloat(game.badlife.value)
+	var yourattack = parseFloat(game.attackdamage.value)
+	var yourlife = parseFloat(game.life.value)
+	var enemyattack = parseFloat(game.enemyattack.value)
+	var yourexperience = parseFloat(game.experience.value)
+	var yourlevel = parseFloat(game.level.value)
+	var yourmoney = parseFloat(game.money.value)
+	var enemyarmor = parseFloat(game.enemyarmor.value)
+	var baldoo = parseFloat(game.baldo.value)
+	var story = parseFloat(game.story.value)
 // 11011
 if (99 > yourlevel) {
 	if (yourexperience > ((yourlevel * 100) + .35 * yourexperience)) {
-	document.game.level.value = yourlevel + 1
-	document.game.f1.value = "LEVEL UP!!"
-	document.game.life.value = 100
-	document.game.attackdamage.value = yourattack + 2
+	game.level.value = yourlevel + 1
+	game.f1.value = "LEVEL UP!!"
+	game.life.value = 100
+	game.attackdamage.value = yourattack + 2
 		if (26 > yougethit) {
-		document.game.armorclass.value = yougethit + 2
+		game.armorclass.value = yougethit + 2
 		}
 // 11111
 	if (yourlevel == 1) {
-	document.game.storyline.value = "It has become apparent that this will be a much tougher trip than you expected.  You have only traveled a few miles outside your gate supplies are already low and your soldiers have taken a beating. You decide to go back to your castle and regroup."
-	document.game.badguy.value = "Child"
-	document.game.enemyattack.value = 2
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 60
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.f1.value = "Your first real Boss"
-	document.game.badlevel.value = "Boss"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.storyline.value = "It has become apparent that this will be a much tougher trip than you expected.  You have only traveled a few miles outside your gate supplies are already low and your soldiers have taken a beating. You decide to go back to your castle and regroup."
+	game.badguy.value = "Child"
+	game.enemyattack.value = 2
+	game.enemyarmor.value = 0
+	game.badlife.value = 60
+	game.item1.value = ""
+	game.item2.value = ""
+	game.f1.value = "Your first real Boss"
+	game.badlevel.value = "Boss"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 	if (yourlevel == 2) {
-	document.game.storyline.value = "When you get to the castle the gates are already open. You go inside and find the city infested with monsters.  There is no resistance from your soldiers and it looks like they just let them in.  You spot one and ask what is going on and he attacks you.  An arrow whizzes by your head and you look up at the wall and see your archers firing on you. Even the citizens are attacking.  You decide to head to the treasure room and get Baldo's equipment. Something you had hoped you would never have to use again."
-	document.game.badguy.value = "Slave"
-	document.game.enemyattack.value = 7
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 80
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.storyline.value = "When you get to the castle the gates are already open. You go inside and find the city infested with monsters.  There is no resistance from your soldiers and it looks like they just let them in.  You spot one and ask what is going on and he attacks you.  An arrow whizzes by your head and you look up at the wall and see your archers firing on you. Even the citizens are attacking.  You decide to head to the treasure room and get Baldo's equipment. Something you had hoped you would never have to use again."
+	game.badguy.value = "Slave"
+	game.enemyattack.value = 7
+	game.enemyarmor.value = 0
+	game.badlife.value = 80
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
    }
 	if (yourlevel == 3) {
-	document.game.storyline.value = "You have fought your way to the treasure room.  The doors are already open. You step in and hear a growl behind you. You look back and see your favorite pet. A huge white tiger."
-	document.game.badguy.value = "White Tiger"
-	document.game.enemyattack.value = 11
-	document.game.enemyarmor.value = 5
-	document.game.badlife.value = 100
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badtype.value = "Nature"
-	document.game.badspecial.value = "None"
+	game.storyline.value = "You have fought your way to the treasure room.  The doors are already open. You step in and hear a growl behind you. You look back and see your favorite pet. A huge white tiger."
+	game.badguy.value = "White Tiger"
+	game.enemyattack.value = 11
+	game.enemyarmor.value = 5
+	game.badlife.value = 100
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badtype.value = "Nature"
+	game.badspecial.value = "None"
 	}
 	if (yourlevel == 4) {
-	document.game.storyline.value = "You have been stripped of your kingdom and the last of your soldiers has been killed.  Now you are completely on your own and surrounded by strange beasts, just like when your village was attacked.  Hopefully your friend will know what is going on and be able to help."
-	document.game.badguy.value = "Slave Warrior"
-	document.game.enemyattack.value = 13
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 105
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.storyline.value = "You have been stripped of your kingdom and the last of your soldiers has been killed.  Now you are completely on your own and surrounded by strange beasts, just like when your village was attacked.  Hopefully your friend will know what is going on and be able to help."
+	game.badguy.value = "Slave Warrior"
+	game.enemyattack.value = 13
+	game.enemyarmor.value = 0
+	game.badlife.value = 105
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 	if (yourlevel == 5) {
-	document.game.storyline.value = "Finally you arrive at your destination.  After asking several questions in a row the king just tells you not to worry and that he can explain everything. He says he has something to show you and you follow him down several flights of stairs.  You go through a large door and are now on a balcony about ten feet from the ground in a large cave like room. The king claps twice and says that this should explain everything.  Two guards rush in and throw you over the balcony. As soon as you hit the ground monsters attack from all sides."
-	document.game.badguy.value = "Druid"
-	document.game.enemyattack.value = 17
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 167
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "Summon Power"
+	game.storyline.value = "Finally you arrive at your destination.  After asking several questions in a row the king just tells you not to worry and that he can explain everything. He says he has something to show you and you follow him down several flights of stairs.  You go through a large door and are now on a balcony about ten feet from the ground in a large cave like room. The king claps twice and says that this should explain everything.  Two guards rush in and throw you over the balcony. As soon as you hit the ground monsters attack from all sides."
+	game.badguy.value = "Druid"
+	game.enemyattack.value = 17
+	game.enemyarmor.value = 0
+	game.badlife.value = 167
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badtype.value = "Human"
+	game.badspecial.value = "Summon Power"
 	}
 	if (yourlevel == 6) {
-	document.game.storyline.value = "You look up at the balcony and see the king standing there laughing.  KING--I suppose I owe you some answers before you die. All these years and you have never figured it out. Baldo was my son and you killed him.  He was a genuois and you were to stupid to realize it.  Thank you for taking care of his weopons though, to bad you were to stupid to use them. Don't worry about your family they are now my loyal servants along with the rest of your kingdom. I would like to stay here and watch you die but Im very busy, goodbye."
-	document.game.badguy.value = "Barbarian"
-	document.game.enemyattack.value = 20
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 189
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.storyline.value = "You look up at the balcony and see the king standing there laughing.  KING--I suppose I owe you some answers before you die. All these years and you have never figured it out. Baldo was my son and you killed him.  He was a genuois and you were to stupid to realize it.  Thank you for taking care of his weopons though, to bad you were to stupid to use them. Don't worry about your family they are now my loyal servants along with the rest of your kingdom. I would like to stay here and watch you die but Im very busy, goodbye."
+	game.badguy.value = "Barbarian"
+	game.enemyattack.value = 20
+	game.enemyarmor.value = 0
+	game.badlife.value = 189
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 	if (yourlevel == 7) {
-	document.game.storyline.value = "You have fought your way across the room. It is to dark to see very well but you feel a cold breeze and follow it to a cave that goes even deeper underground. The entire room smells like rotting carcasses but as you enter the cave the smell becomes overwhelming."
-	document.game.f2.value = "You found The Red Ring."
-	document.game.explaneline.value = "The Red Ring is the second badest Ring in the game."
-	document.game.imgring.src = "../Ring/Theredring.bmp"
-	document.game.badguy.value = "Bowman"
-	document.game.enemyattack.value = 25
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 207
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.storyline.value = "You have fought your way across the room. It is to dark to see very well but you feel a cold breeze and follow it to a cave that goes even deeper underground. The entire room smells like rotting carcasses but as you enter the cave the smell becomes overwhelming."
+	game.f2.value = "You found The Red Ring."
+	game.explaneline.value = "The Red Ring is the second badest Ring in the game."
+	game.imgring.src = "../Ring/Theredring.bmp"
+	game.badguy.value = "Bowman"
+	game.enemyattack.value = 25
+	game.enemyarmor.value = 0
+	game.badlife.value = 207
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 	if (yourlevel == 8) {
-	document.game.storyline.value = "After traveling for miles you are exhausted and about to give up and let the monsters overtake you. You hear some loud noises echoing through the cave. It sounds as if a fierce battle is being fought.  You hear a scream that sounds very human and then it gets quiet again."
-	document.game.badguy.value = ""
-	document.game.enemyattack.value = 25
-	document.game.enemyarmor.value = 0
-	document.game.badlife.value = 207
-	document.game.item1.value = ""
-	document.game.item2.value = ""
-	document.game.badlevel.value = "Boss"
-	document.game.badtype.value = "Human"
-	document.game.badspecial.value = "None"
+	game.storyline.value = "After traveling for miles you are exhausted and about to give up and let the monsters overtake you. You hear some loud noises echoing through the cave. It sounds as if a fierce battle is being fought.  You hear a scream that sounds very human and then it gets quiet again."
+	game.badguy.value = ""
+	game.enemyattack.value = 25
+	game.enemyarmor.value = 0
+	game.badlife.value = 207
+	game.item1.value = ""
+	game.item2.value = ""
+	game.badlevel.value = "Boss"
+	game.badtype.value = "Human"
+	game.badspecial.value = "None"
 	}
 	if (yourlevel == 9) {
-	document.game.storyline.value = "You see a man lying on the ground. He looks badly injured.--WARRIOR--I am Shotokahn. I was this kingdoms fiercest and most loyal warrior. The king threw me in here when I objected to his attacking your country. It is not his fault though, the items you acquired from Baldo were cursed. If any man posses them for to long all his friends will become enemies. He banished Baldo from this Kingdom because he knew he was evil. The demon I was just fighting is the one that granted Baldo his powers. The only way to break the curse is to kill him. Here take my sword."
-		document.game.swordbonus.value = 25
-		document.game.items.value = "Shotokahn's Blade+25"
-		document.game.badguy.value = "Demon"
-		document.game.enemyattack.value = 49
-		document.game.enemyarmor.value = 5
-		document.game.badlife.value = 438
-		document.game.imgbad.src = "../Monsters/Demon.bmp"
-		document.game.imgweapon.src = "../Weapons/ShortSword4.bmp"
-		document.game.f1.value = "The Shotokahn Sword give you an amulet and 49 in Attack Damage"
-		document.game.attackdamage.value = "50"
-		document.game.item1.value = ""
-		document.game.item2.value = ""
-		document.game.badlevel.value = "Boss"
-		document.game.badspecial.value = "None"
-		document.game.badtype.value = "Human"	
+	game.storyline.value = "You see a man lying on the ground. He looks badly injured.--WARRIOR--I am Shotokahn. I was this kingdoms fiercest and most loyal warrior. The king threw me in here when I objected to his attacking your country. It is not his fault though, the items you acquired from Baldo were cursed. If any man posses them for to long all his friends will become enemies. He banished Baldo from this Kingdom because he knew he was evil. The demon I was just fighting is the one that granted Baldo his powers. The only way to break the curse is to kill him. Here take my sword."
+		game.swordbonus.value = 25
+		game.items.value = "Shotokahn's Blade+25"
+		game.badguy.value = "Demon"
+		game.enemyattack.value = 49
+		game.enemyarmor.value = 5
+		game.badlife.value = 438
+		game.imgbad.src = "../Monsters/Demon.bmp"
+		game.imgweapon.src = "../Weapons/ShortSword4.bmp"
+		game.f1.value = "The Shotokahn Sword give you an amulet and 49 in Attack Damage"
+		game.attackdamage.value = "50"
+		game.item1.value = ""
+		game.item2.value = ""
+		game.badlevel.value = "Boss"
+		game.badspecial.value = "None"
+		game.badtype.value = "Human"
 	}
 	if (yourlevel == 10) {
-	document.game.storyline.value = ""
-		document.game.swordbonus.value = 25
-		document.game.badguy.value = ""
-		document.game.enemyattack.value = 9
-		document.game.enemyarmor.value = 5
-		document.game.badlife.value = 456
-		document.game.f1.value = ""
-		document.game.item1.value = ""
-		document.game.item2.value = ""
-		document.game.badlevel.value = "Boss"
-		document.game.badspecial.value = "None"
-		document.game.badtype.value = "Human"	
+	game.storyline.value = ""
+		game.swordbonus.value = 25
+		game.badguy.value = ""
+		game.enemyattack.value = 9
+		game.enemyarmor.value = 5
+		game.badlife.value = 456
+		game.f1.value = ""
+		game.item1.value = ""
+		game.item2.value = ""
+		game.badlevel.value = "Boss"
+		game.badspecial.value = "None"
+		game.badtype.value = "Human"
 	}
 	if (yourlevel == 12) {
-	document.game.storyline.value = "You reach the castle and the king looks very happy to see you. --KING-- Thank you for killing that demon. Unfortunately for though I am the one that made the deal with that demon to get my son his powers. It forbade me from having him killed myself. With him out of the way I do not have to repay my debt and nothing stands in my way. Good work Shoto in tricking him into killing the demon. Now kill that fool."
-		document.game.badguy.value = "Shotokahn"
-		document.game.enemyattack.value = 30
-		document.game.enemyarmor.value = 5
-		document.game.badlife.value = 500
-		document.game.item1.value = ""
-		document.game.item2.value = ""
-		document.game.explaneline.value = "The Shotokahn ring, give you 1200± ( ± = Gold ) and 600 experince."
-		document.game.money.value = (cash +1200)
-		document.game.experience.value = (experince +600)
-		document.game.badlevel.value = "Boss"
+	game.storyline.value = "You reach the castle and the king looks very happy to see you. --KING-- Thank you for killing that demon. Unfortunately for though I am the one that made the deal with that demon to get my son his powers. It forbade me from having him killed myself. With him out of the way I do not have to repay my debt and nothing stands in my way. Good work Shoto in tricking him into killing the demon. Now kill that fool."
+		game.badguy.value = "Shotokahn"
+		game.enemyattack.value = 30
+		game.enemyarmor.value = 5
+		game.badlife.value = 500
+		game.item1.value = ""
+		game.item2.value = ""
+		game.explaneline.value = "The Shotokahn ring, give you 1200± ( ± = Gold ) and 600 experince."
+		game.money.value = (cash +1200)
+		game.experience.value = (experince +600)
+		game.badlevel.value = "Boss"
 	}
 	if (yourlevel == 14) {
-	document.game.storyline.value = "You find Baldo's Magic Arm Ring in the treasure room. The king must have been in a hurry to leave such an important item. "
-		document.game.yourring.value = "BALDO'S Arm Ring"
-		document.game.ringbonus.value = 6
-		document.game.imgarm.src = "../Arm/Balbo.bmp"
+	game.storyline.value = "You find Baldo's Magic Arm Ring in the treasure room. The king must have been in a hurry to leave such an important item. "
+		game.yourring.value = "BALDO'S Arm Ring"
+		game.ringbonus.value = 6
+		game.imgarm.src = "../Arm/Balbo.bmp"
 	}
 	if (yourlevel == 98) {
-	document.game.storyline.value = "You reach the castle and the king looks very happy to see you. --KING-- Thank you for killing that demon. Unfortunately for though I am the one that made the deal with that demon to get my son his powers. It forbade me from having him killed myself. With him out of the way I do not have to repay my debt and nothing stands in my way. Good work Shoto in tricking him into killing the demon. Now kill that fool."
-		document.game.badguy.value = "Golden king"
-		document.game.enemyattack.value = 30
-		document.game.enemyarmor.value = 5
-		document.game.badlife.value = 570
-		document.game.item1.value = "The Golden ring"
-		document.game.item2.value = ""
-		document.game.f2.value = " You found 1025 gold. "
-		document.game.money.value = (cash +1025)
-		document.game.imgring.src = "../Ring/.bmp"
-		document.game.explaneline.value = "The Dodgeball ring, give you 1000± ( ± = Gold ) and 100 experince."
-		document.game.money.value = (cash +1000)
-		document.game.experience.value = (experince +100)
-		document.game.badlevel.value = "Boss"
+	game.storyline.value = "You reach the castle and the king looks very happy to see you. --KING-- Thank you for killing that demon. Unfortunately for though I am the one that made the deal with that demon to get my son his powers. It forbade me from having him killed myself. With him out of the way I do not have to repay my debt and nothing stands in my way. Good work Shoto in tricking him into killing the demon. Now kill that fool."
+		game.badguy.value = "Golden king"
+		game.enemyattack.value = 30
+		game.enemyarmor.value = 5
+		game.badlife.value = 570
+		game.item1.value = "The Golden ring"
+		game.item2.value = ""
+		game.f2.value = " You found 1025 gold. "
+		game.money.value = (cash +1025)
+		game.imgring.src = "../Ring/.bmp"
+		game.explaneline.value = "The Dodgeball ring, give you 1000± ( ± = Gold ) and 100 experince."
+		game.money.value = (cash +1000)
+		game.experience.value = (experince +100)
+		game.badlevel.value = "Boss"
 	}
 	return false
 	}
 }
 // 10101
 	if (1 > yourlife) {
-	document.game.f1.value = "DEAD"
-	document.game.f2.value = "DEAD"
-	document.game.experience.value = 0
-	document.game.money.value = 0
-	document.game.storyline.value = "DEAD"
+	game.f1.value = "DEAD"
+	game.f2.value = "DEAD"
+	game.experience.value = 0
+	game.money.value = 0
+	game.storyline.value = "DEAD"
 	alert("YOU ARE DEAD")
 	parent.close()
 	return false
@@ -1004,90 +1003,90 @@ if (99 > yourlevel) {
 		if (enemylife > 0) {
 			if (randum > (hegethit - ringbonus)) {
 				if (randum == 14) {
-				document.game.badlife.value = enemylife - ((yourattack + swordbonus) * 2)
-				document.game.f1.value = "Critical Hit!!! you did " + Math.ceil(((yourattack + swordbonus) * 2.395791264))  + " points of damage!"
+				game.badlife.value = enemylife - ((yourattack + swordbonus) * 2)
+				game.f1.value = "Critical Hit!!! you did " + Math.ceil(((yourattack + swordbonus) * 2.395791264))  + " points of damage!"
 				} else {
-				document.game.badlife.value = enemylife - (yourattack + swordbonus)
-				document.game.f1.value = "You hit the enemy for " + (yourattack + swordbonus)  + " damage points"
+				game.badlife.value = enemylife - (yourattack + swordbonus)
+				game.f1.value = "You hit the enemy for " + (yourattack + swordbonus)  + " damage points"
 				}
 			}
 			if (randum1 > (yougethit + armorbonus)) {
-			document.game.life.value = yourlife - (enemyattack - shieldbonus) - (2 * yourlevel)
-			document.game.f2.value = "You got hit for " + ((enemyattack - shieldbonus) + (2 * yourlevel)) + " hit points"
+			game.life.value = yourlife - (enemyattack - shieldbonus) - (2 * yourlevel)
+			game.f2.value = "You got hit for " + ((enemyattack - shieldbonus) + (2 * yourlevel)) + " hit points"
 			}
 		}
 
 // 01010
 if (1 > enemylife) {
-	document.game.badlife.value = "DEAD"
-	document.game.baldo.value = baldoo + 1
-	document.game.experience.value = yourexperience + (enemyattack * enemyarmor)
-	document.game.money.value = yourmoney + (enemyattack * randum)
-	document.game.f1.value = "You have defeated your oppenent. You aquired " + (enemyattack * randum) + " gold. And " + (enemyattack * enemyarmor) + " experience"
+	game.badlife.value = "DEAD"
+	game.baldo.value = baldoo + 1
+	game.experience.value = yourexperience + (enemyattack * enemyarmor)
+	game.money.value = yourmoney + (enemyattack * randum)
+	game.f1.value = "You have defeated your oppenent. You aquired " + (enemyattack * randum) + " gold. And " + (enemyattack * enemyarmor) + " experience"
 		if (randum == 15) {
-		document.game.life.value = yourlife + 15
-		document.game.f2.value = "You Found Magic Beans plus 15 to hitpoints"
-      	document.game.badlevel.value = "Boss"
+		game.life.value = yourlife + 15
+		game.f2.value = "You Found Magic Beans plus 15 to hitpoints"
+	game.badlevel.value = "Boss"
       	}
 		if (randum == 20) {
-		document.game.imgshield.src = "../shield/Shield+1.bmp"
-		document.game.f2.value = "You Found Shield +1"
-      	document.game.shieldbonus.value = 20
+		game.imgshield.src = "../shield/Shield+1.bmp"
+		game.f2.value = "You Found Shield +1"
+	game.shieldbonus.value = 20
       	}
-			if (document.game.enemyattack.value == 49) {
-			document.game.level.value = yourlevel + 1
-			document.game.badguy.value = "DEAD"
-			document.game.storyline.value = "After defeating the demon, Shotokahn emmidiatly asks for his sword back. Shotokahn seems to know the caves very well and you quickly fight your way to the surface. Now you head back to the castle to make sure the curse has been lifted."
-			document.game.swordbonus.value = 5
-		        document.game.items.value = "Sword+5"
-				 document.game.imgweapon.src = "../Wepons/Shortsword4.bmp"
+			if (game.enemyattack.value == 49) {
+			game.level.value = yourlevel + 1
+			game.badguy.value = "DEAD"
+			game.storyline.value = "After defeating the demon, Shotokahn emmidiatly asks for his sword back. Shotokahn seems to know the caves very well and you quickly fight your way to the surface. Now you head back to the castle to make sure the curse has been lifted."
+			game.swordbonus.value = 5
+		        game.items.value = "Sword+5"
+				 game.imgweapon.src = "../Wepons/Shortsword4.bmp"
 			}
-			if (document.game.enemyattack.value == 30) {
-			document.game.badguy.value = "DEAD"
-			document.game.swordbonus.value = 25
-		        document.game.items.value = "Shotokahn's Blade+25"
-			document.game.storyline.value = "You leave your sword lodged in Shotokahn's chest and take his. Then quickly run after the King."
-			document.game.imgweapon.src = ""
+			if (game.enemyattack.value == 30) {
+			game.badguy.value = "DEAD"
+			game.swordbonus.value = 25
+		        game.items.value = "Shotokahn's Blade+25"
+			game.storyline.value = "You leave your sword lodged in Shotokahn's chest and take his. Then quickly run after the King."
+			game.imgweapon.src = ""
 			}
 			if (yourlevel == 99) {
-			document.game.badguy.value = "The World is Yours"
-			document.game.storyline.value = "You made it... The game is over... You won... Special thanks to: Patur Hojgaard Jacobsen: Programme. Tummas Jóhan Sigvardsen : Programme."
+			game.badguy.value = "The World is Yours"
+			game.storyline.value = "You made it... The game is over... You won... Special thanks to: Patur Hojgaard Jacobsen: Programme. Tummas Jóhan Sigvardsen : Programme."
 			}
 			if (yourlevel == 69) {
-			document.game.imgweapon.src = "../Weapons/Sword+4.bmp"
-			document.game.items.value = "The Big Silver Sword" 
+			game.imgweapon.src = "../Weapons/Sword+4.bmp"
+			game.items.value = "The Big Silver Sword"
 			}
-			if (document.game.enemyattack.value == 11) {
-			document.game.badguy.value = "DEAD"
-			document.game.storyline.value = "After killing the tiger you look around the treasure room. The only thing missing is Baldo's magic items. If one person is in possession of all of them it will be impossible to defeat them. Without these items and with the whole city turned against you, you are forced to flee.  You quickly gather what equipment you can, your few remaining loyal soldiers and once again set out for your neighboring kingdom."
+			if (game.enemyattack.value == 11) {
+			game.badguy.value = "DEAD"
+			game.storyline.value = "After killing the tiger you look around the treasure room. The only thing missing is Baldo's magic items. If one person is in possession of all of them it will be impossible to defeat them. Without these items and with the whole city turned against you, you are forced to flee.  You quickly gather what equipment you can, your few remaining loyal soldiers and once again set out for your neighboring kingdom."
 			}
 		}
 }
 // 00000
 	function heal() {
-	var yourlife = parseFloat(document.game.life.value)
-	var healpower = parseFloat(document.game.healpower.value)
+	var yourlife = parseFloat(game.life.value)
+	var healpower = parseFloat(game.healpower.value)
 	if (1 > yourlife) {
-	document.game.f1.value = "DEAD"
-	document.game.f2.value = "DEAD"
-	document.game.experience.value = 0
-	document.game.money.value = 0
+	game.f1.value = "DEAD"
+	game.f2.value = "DEAD"
+	game.experience.value = 0
+	game.money.value = 0
 	alert("YOU ARE DEAD")
 	parent.close()
 	return false
 	}	
-	var cash = parseFloat(document.game.money.value)
-	var yourlife = parseFloat(document.game.life.value)
-	var yourexperience = parseFloat(document.game.experience.value)
+	var cash = parseFloat(game.money.value)
+	var yourlife = parseFloat(game.life.value)
+	var yourexperience = parseFloat(game.experience.value)
 	if (cash > 24) {
-	document.game.money.value = cash - 25
-	document.game.life.value = yourlife + healpower
-	document.game.experience.value = yourexperience + 10
+	game.money.value = cash - 25
+	game.life.value = yourlife + healpower
+	game.experience.value = yourexperience + 10
 	}
 	if (yourlife == 100) {
-		document.game.life.value = 100
+		game.life.value = 100
 		alert('You can max. have 100 lifepoints.')
-		document.game.money.value = cash + 0
+		game.money.value = cash + 0
   }
 }
 	
@@ -1095,49 +1094,49 @@ if (1 > enemylife) {
 // 11110
 function buyitem1() {
 var randy = Math.round(Math.random() * 150)
-var theitem = document.game.xitem1.value
-var yourmoney = parseFloat(document.game.money.value)
-var yourattack = parseFloat(document.game.attackdamage.value)
-var yourstuff = document.game.items.value
-var yougethit = parseFloat(document.game.armorclass.value)
-var yourlife = parseFloat(document.game.life.value)
-		var swordbonus = parseFloat(document.game.swordbonus.value)
-		var armorbonus = parseFloat(document.game.armorbonus.value)
-		var shieldbonus = parseFloat(document.game.shieldbonus.value)
-		var amuletbonus = parseFloat(document.game.amuletbonus.value)
-		var ringbonus = parseFloat(document.game.ringbonus.value)
+var theitem = game.xitem1.value
+var yourmoney = parseFloat(game.money.value)
+var yourattack = parseFloat(game.attackdamage.value)
+var yourstuff = game.items.value
+var yougethit = parseFloat(game.armorclass.value)
+var yourlife = parseFloat(game.life.value)
+		var swordbonus = parseFloat(game.swordbonus.value)
+		var armorbonus = parseFloat(game.armorbonus.value)
+		var shieldbonus = parseFloat(game.shieldbonus.value)
+		var amuletbonus = parseFloat(game.amuletbonus.value)
+		var ringbonus = parseFloat(game.ringbonus.value)
 	if (theitem == 1) {
 		if (yourmoney > 0) {
-	document.game.money.value = yourmoney - 0
-	document.game.swordbonus.value = 0
-	document.game.item1.value = ""
-	document.game.xitem1.value = 0
-	document.game.items.value = ""
+	game.money.value = yourmoney - 0
+	game.swordbonus.value = 0
+	game.item1.value = ""
+	game.xitem1.value = 0
+	game.items.value = ""
 		}
 	}
 }	
 // 01111
 function buyitem2() {
-var theitem = document.game.xitem2.value
-var yourlife = parseFloat(document.game.life.value)
-var yourmoney = parseFloat(document.game.money.value)
-var yourattack = parseFloat(document.game.attackdamage.value)
-var yougethit = parseFloat(document.game.armorclass.value)
-var healpower = parseFloat(document.game.healpower.value)
-var yourexperience = parseFloat(document.game.experience.value)
-		var swordbonus = parseFloat(document.game.swordbonus.value)
-		var armorbonus = parseFloat(document.game.armorbonus.value)
-		var shieldbonus = parseFloat(document.game.shieldbonus.value)
-		var amuletbonus = parseFloat(document.game.amuletbonus.value)
-		var ringbonus = parseFloat(document.game.ringbonus.value)
+var theitem = game.xitem2.value
+var yourlife = parseFloat(game.life.value)
+var yourmoney = parseFloat(game.money.value)
+var yourattack = parseFloat(game.attackdamage.value)
+var yougethit = parseFloat(game.armorclass.value)
+var healpower = parseFloat(game.healpower.value)
+var yourexperience = parseFloat(game.experience.value)
+		var swordbonus = parseFloat(game.swordbonus.value)
+		var armorbonus = parseFloat(game.armorbonus.value)
+		var shieldbonus = parseFloat(game.shieldbonus.value)
+		var amuletbonus = parseFloat(game.amuletbonus.value)
+		var ringbonus = parseFloat(game.ringbonus.value)
 	if (theitem == 1) {
 		if (yourmoney > 99) {
-	document.game.money.value = yourmoney - 100
-	document.game.swordbonus.value = 3
-	document.game.item2.value = "Bought"
-	document.game.xitem2.value = 0
-	document.game.items.value = "Silversword"
-	document.game.imgweapon.src = "../Weapons/Sword+3.bmp"	
+	game.money.value = yourmoney - 100
+	game.swordbonus.value = 3
+	game.item2.value = "Bought"
+	game.xitem2.value = 0
+	game.items.value = "Silversword"
+	game.imgweapon.src = "../Weapons/Sword+3.bmp"
 		}
 	}
 }
@@ -1147,8 +1146,8 @@ function chooseName() {
 	// the browser's built-in window.name string.
 	const name = chooseName
 	var namer = prompt('Write your name here:','')
-	var maner = document.game.name.value
-	var hero = document.game.hero.src
+	var maner = game.name.value
+	var hero = game.hero.src
 	if (namer == 'null') {
 		alert('Your name is not allowed to be null in this game. Write something else. :)')
 		name()
@@ -1165,99 +1164,99 @@ function chooseName() {
 		return false;
 	}
 	if (namer == 'gotoyear3001') {
-		document.game.swordbonus.value = 25
-		document.game.items.value = "Laser Sword"
-		document.game.imgweapon.src = "../Weapons/animatonLaserSword.GIF"
-		document.game.yourhumor.value = " THIS WILL BE GREAT	:) "
+		game.swordbonus.value = 25
+		game.items.value = "Laser Sword"
+		game.imgweapon.src = "../Weapons/animatonLaserSword.GIF"
+		game.yourhumor.value = " THIS WILL BE GREAT	:) "
 		name();
 		return false;
 			}
 	if (namer == 'gotoyear3000') {
-		document.game.swordbonus.value = 25
-		document.game.items.value = "Laser Sword"
-		document.game.imgweapon.src = "../Weapons/LaserSword.bmp"
-		document.game.yourhumor.value = " THIS WILL BE COOL	:) "
+		game.swordbonus.value = 25
+		game.items.value = "Laser Sword"
+		game.imgweapon.src = "../Weapons/LaserSword.bmp"
+		game.yourhumor.value = " THIS WILL BE COOL	:) "
 		name();
 		return false;
 			}
 		if (namer == 'pink4ever') {
-		document.game.swordbonus.value = 25
-		document.game.items.value = "Pink Laser Sword"
-		document.game.imgweapon.src = "../Weapons/PinkLaserSword.bmp"
-		document.game.attackdamage.value =  20
-		document.game.yourhumor.value = " Lets some kill monsters :) "
+		game.swordbonus.value = 25
+		game.items.value = "Pink Laser Sword"
+		game.imgweapon.src = "../Weapons/PinkLaserSword.bmp"
+		game.attackdamage.value =  20
+		game.yourhumor.value = " Lets some kill monsters :) "
 		name();
 		return false;
 			}
 		if (namer == 'silverstone') {
-		document.game.swordbonus.value = 100
-		document.game.items.value = "Silversword"
-		document.game.imgweapon.src = "../Weapons/Sword+3.bmp"
-		document.game.attackdamage.value =  20
-		document.game.yourhumor.value = " Silver "
+		game.swordbonus.value = 100
+		game.items.value = "Silversword"
+		game.imgweapon.src = "../Weapons/Sword+3.bmp"
+		game.attackdamage.value =  20
+		game.yourhumor.value = " Silver "
 		name();
 		return false;
 			}
 		if (namer == 'godblesstheking') {
-		document.game.swordbonus.value = 100
-		document.game.items.value = "Big Silver Sword"
-		document.game.imgweapon.src = "../Weapons/Sword+4.bmp"
-		document.game.attackdamage.value =  25
-		document.game.yourhumor.value = " Silver "
+		game.swordbonus.value = 100
+		game.items.value = "Big Silver Sword"
+		game.imgweapon.src = "../Weapons/Sword+4.bmp"
+		game.attackdamage.value =  25
+		game.yourhumor.value = " Silver "
 		name();
 		return false;
 			}
 		if (namer == 'turkis4ever') {
-		document.game.swordbonus.value = 25
-		document.game.items.value = "Turkis Laser Sword"
-		document.game.imgweapon.src = "../Weapons/TurkisLaserSword.bmp"
-		document.game.attackdamage.value =  20
-		document.game.yourhumor.value = " Lets some kill monsters :)"
+		game.swordbonus.value = 25
+		game.items.value = "Turkis Laser Sword"
+		game.imgweapon.src = "../Weapons/TurkisLaserSword.bmp"
+		game.attackdamage.value =  20
+		game.yourhumor.value = " Lets some kill monsters :)"
 		name();
 		return false;
 	 		}	
 	 	if (namer == 'blue4ever') {
-		document.game.swordbonus.value = 25
-		document.game.items.value = "Blue Laser Sword"
-		document.game.imgweapon.src = "../Weapons/BlueLaserSword.bmp"
-		document.game.attackdamage.value =  20
-		document.game.yourhumor.value = " Lets some kill monsters :)"
+		game.swordbonus.value = 25
+		game.items.value = "Blue Laser Sword"
+		game.imgweapon.src = "../Weapons/BlueLaserSword.bmp"
+		game.attackdamage.value =  20
+		game.yourhumor.value = " Lets some kill monsters :)"
 		name();
 		return false;
 	 		}
 	 	if (namer == 'yellow4ever') {
-		document.game.swordbonus.value = 25
-		document.game.items.value = "Yellow Laser Sword"
-		document.game.imgweapon.src = "../Weapons/YellowLaserSword.bmp"
-		document.game.attackdamage.value =  20
-		document.game.yourhumor.value = " Lets some kill monsters :)"
+		game.swordbonus.value = 25
+		game.items.value = "Yellow Laser Sword"
+		game.imgweapon.src = "../Weapons/YellowLaserSword.bmp"
+		game.attackdamage.value =  20
+		game.yourhumor.value = " Lets some kill monsters :)"
 		name();
 		return false;
 	 		}
 	 	if (namer == 'green4ever') {
-		document.game.swordbonus.value = 25
-		document.game.items.value = "Green Laser Sword"
-		document.game.imgweapon.src = "../Weapons/GreenLaserSword.bmp"
-		document.game.attackdamage.value =  20
-		document.game.yourhumor.value = " Lets some kill monsters :)"
+		game.swordbonus.value = 25
+		game.items.value = "Green Laser Sword"
+		game.imgweapon.src = "../Weapons/GreenLaserSword.bmp"
+		game.attackdamage.value =  20
+		game.yourhumor.value = " Lets some kill monsters :)"
 		name();
 		return false;
 	 		}	
 		if (namer == 'white4ever') {
-		document.game.swordbonus.value = 25
-		document.game.items.value = "White Laser Sword"
-		document.game.imgweapon.src = "../Weapons/whiteLaserSword.bmp"
-		document.game.attackdamage.value =  "20"
-		document.game.yourhumor.value = " Lets some kill monsters :)"
+		game.swordbonus.value = 25
+		game.items.value = "White Laser Sword"
+		game.imgweapon.src = "../Weapons/whiteLaserSword.bmp"
+		game.attackdamage.value =  "20"
+		game.yourhumor.value = " Lets some kill monsters :)"
 		name();
 		return false;
 			 }
 		if (namer == 'gotothemoonandmeetaliens') {
-		document.game.swordbonus.value = 25
-		document.game.items.value = "Laser Gun"
-		document.game.imgweapon.src = "../Weapons/Lasergun.bmp"
-		document.game.attackdamage.value =  "35"
-		document.game.yourhumor.value = " Lets some kill monsters :)"
+		game.swordbonus.value = 25
+		game.items.value = "Laser Gun"
+		game.imgweapon.src = "../Weapons/Lasergun.bmp"
+		game.attackdamage.value =  "35"
+		game.yourhumor.value = " Lets some kill monsters :)"
 		name();
 		return false;
 			}
@@ -1377,144 +1376,144 @@ function chooseName() {
 		return false;
 			}
 		if (namer == 'blackpanterintheuk') {
-		document.game.swordbonus.value = 50
-		document.game.items.value = "Black Laser Sword"
-		document.game.imgweapon.src = "../Weapons/blackLaserSword.bmp"
-		document.game.attackdamage.value =  "30"
-		document.game.yourhumor.value = " Star Fighting"
-		document.game.explaneline.value = "The Black Laser Sword is the second best laserweapon in the game."
-		document.game.imgstone.src = "../magic%20stone/Black.bmp"
-		document.game.yourstone.value = "The Black Stone"
+		game.swordbonus.value = 50
+		game.items.value = "Black Laser Sword"
+		game.imgweapon.src = "../Weapons/blackLaserSword.bmp"
+		game.attackdamage.value =  "30"
+		game.yourhumor.value = " Star Fighting"
+		game.explaneline.value = "The Black Laser Sword is the second best laserweapon in the game."
+		game.imgstone.src = "../magic%20stone/Black.bmp"
+		game.yourstone.value = "The Black Stone"
 		name();
 		return false;
 			}
 		if (namer == 'greatshit') {
-		document.game.youraction.value = "Smoke"
-		document.game.imgface.src = "../Face/smoke.bmp" 
+		game.youraction.value = "Smoke"
+		game.imgface.src = "../Face/smoke.bmp"
 		name();
 		return false;
 	       }
 	   if (namer == 'therealsavers') {
-		document.game.youraction.value = "Drinking wine"
-		document.game.imgweapon.src = "../Weapons/wine.bmp" 
-		document.game.attackdamage.value = "40"
-		document.game.items.value = "Wine buttel"
-		document.game.yourhumor.value = " Drunk "
+		game.youraction.value = "Drinking wine"
+		game.imgweapon.src = "../Weapons/wine.bmp"
+		game.attackdamage.value = "40"
+		game.items.value = "Wine buttel"
+		game.yourhumor.value = " Drunk "
 		name();
 		return false;
 	       }
 	   if (namer == 'gotojapan') {
-		document.game.youraction.value = ""
-		document.game.imgweapon.src = "../Weapons/samurai.bmp" 
-		document.game.attackdamage.value = "50"
-		document.game.items.value = "Samurai Sword"
-		document.game.yourhumor.value = " Japan "
+		game.youraction.value = ""
+		game.imgweapon.src = "../Weapons/samurai.bmp"
+		game.attackdamage.value = "50"
+		game.items.value = "Samurai Sword"
+		game.yourhumor.value = " Japan "
 		name();
 		return false;
 	       }
 	   if (namer == '123dodgeball') {
-		document.game.youraction.value = "Hiting whit a Dodgeball"
-		document.game.imgweapon.src = "../Weapons/Dodgeball.bmp" 
-		document.game.attackdamage.value = "55"
-		document.game.items.value = "Dodgeball"
-		document.game.yourhumor.value = " Sporty "
-		document.game.imgamulet.src = "../amulet/dodgeball.bmp"
-		document.game.youramulet.value = "The Dodgeball Amulet"
-		document.game.imgshield.src = "../shield/dodgeball.bmp"
-		document.game.yourshield.value = "The Dodgeball Shield"
-		document.game.amuletbonus.value = "30"
-		document.game.f1.value = "You get The Dodgeball Amulet"
-		document.game.f2.value = "You get The Dodgeball Ring"
-		document.game.explaneline.value = "You get all the Dodgeball stuffs, and the Dodgeball ring, give you 1000± ( ± = Gold ) and 100 experince. The Amulet give you 5 attackdamage and a free ticket to level 5 :-) The Dodgeball shield is a very special shield, you can only get it if you do this the dodgeball cheat. The Dodgeball Stone give you 50 lifepoints and it is only working one time."
-		document.game.imgring.src = "../Ring/dodgeball.bmp"
-		document.game.yourring.value = "The Dodgeball Ring" 
-		document.game.money.value = 1100
-		document.game.experience.value = 100
-		document.game.level.value = 5
-		document.game.attackdamage.value = 60
-		document.game.life.value = 100
-		document.game.yourstone.value = " The Dodgeball Stone "
-		document.game.imgstone.src = "../magic%20stone/Dodgeball.bmp"
+		game.youraction.value = "Hiting whit a Dodgeball"
+		game.imgweapon.src = "../Weapons/Dodgeball.bmp"
+		game.attackdamage.value = "55"
+		game.items.value = "Dodgeball"
+		game.yourhumor.value = " Sporty "
+		game.imgamulet.src = "../amulet/dodgeball.bmp"
+		game.youramulet.value = "The Dodgeball Amulet"
+		game.imgshield.src = "../shield/dodgeball.bmp"
+		game.yourshield.value = "The Dodgeball Shield"
+		game.amuletbonus.value = "30"
+		game.f1.value = "You get The Dodgeball Amulet"
+		game.f2.value = "You get The Dodgeball Ring"
+		game.explaneline.value = "You get all the Dodgeball stuffs, and the Dodgeball ring, give you 1000± ( ± = Gold ) and 100 experince. The Amulet give you 5 attackdamage and a free ticket to level 5 :-) The Dodgeball shield is a very special shield, you can only get it if you do this the dodgeball cheat. The Dodgeball Stone give you 50 lifepoints and it is only working one time."
+		game.imgring.src = "../Ring/dodgeball.bmp"
+		game.yourring.value = "The Dodgeball Ring"
+		game.money.value = 1100
+		game.experience.value = 100
+		game.level.value = 5
+		game.attackdamage.value = 60
+		game.life.value = 100
+		game.yourstone.value = " The Dodgeball Stone "
+		game.imgstone.src = "../magic%20stone/Dodgeball.bmp"
 		alert('This cheat is only working one time.')
 		name();
 		return false;
 	       }
 	if (namer == 'goldentreasure') {
-		document.game.money.value = 10000
+		game.money.value = 10000
 		name();
 		return false; 
 			}
 	if (namer == '+100') {
-		document.game.life.value = 100
-		document.game.experience.value = 100
+		game.life.value = 100
+		game.experience.value = 100
 		name();
 		return false;
 		    }
 	if (namer == 'qzxlzsx') {
-		document.game.level.value = 99
-		document.game.experience.value = 100000
+		game.level.value = 99
+		game.experience.value = 100000
 		name();
 		return false;
 		    }
 	if (namer == 'iamnotdeadgoldenarmordand') {
-		document.game.armorclass.value = 100
-		document.game.imghead.src = "../Head/goldenArmor.bmp"
+		game.armorclass.value = 100
+		game.imghead.src = "../Head/goldenArmor.bmp"
 		name();
 		return false;
 			}
 	if (namer == 'greatarmordand') {
-		document.game.armorclass.value = 20
-		document.game.imghead.src = "../Head/Armor.bmp"
-		document.game.imgshield.src = "../shield/Shield+1.bmp"
-		document.game.yourshield.value = " Shield /+1 "
-		document.game.yourarmor.value = " Armor /+1 "
-		document.game.explaneline.value = "Armor /+1 is a normal Armor. Shield /+1 is a normal." 
+		game.armorclass.value = 20
+		game.imghead.src = "../Head/Armor.bmp"
+		game.imgshield.src = "../shield/Shield+1.bmp"
+		game.yourshield.value = " Shield /+1 "
+		game.yourarmor.value = " Armor /+1 "
+		game.explaneline.value = "Armor /+1 is a normal Armor. Shield /+1 is a normal."
 		name();
 		return false;
 			}
 	if (namer == 'dead4alevelup') {
-		document.game.level.value = 4
-		document.game.money.value = 4000
-		document.game.life.value  = 54
-		document.game.swordbonus.value  =  14 
-		document.game.attackdamage.value  = 14
-		document.game.experience.value  = 4
-		document.game.shieldbonus.value = 4
+		game.level.value = 4
+		game.money.value = 4000
+		game.life.value  = 54
+		game.swordbonus.value  =  14
+		game.attackdamage.value  = 14
+		game.experience.value  = 4
+		game.shieldbonus.value = 4
 		alert('You have to do all the cheats again(if you did cheats before), if you will keep it the same way like before you did this cheat.')
 		name();
 		return false;
 			}
 	if (namer == 'no-amiss') {
-		document.game.money.value = 5000
+		game.money.value = 5000
 		name();
 		return false;
 		   }
 	if (namer == '101imposible') {
-		document.game.badguy.value = "Big White Tiger"
-		document.game.enemyattack.value = 100
-		document.game.badlife.value = 520
-		document.game.enemyarmor.value = "0"
-		document.game.f1.value = "Now you are in big truble!!!" 
-		document.game.item1.value = "The Big Silver Sword"
-		document.game.item2.value = ""
-		document.game.imgweapon.src = "../Weapons/Sword+4.bmp"
-		document.game.items.value = "Big Silver Sword"
-		document.game.explaneline.value = " The Big Silver Sword is a very special sword you get it in level 69, it have 50 attackdamage."
-		document.game.attackdamage.value = "50"
-		document.game.badlevel.value = "Boss"
+		game.badguy.value = "Big White Tiger"
+		game.enemyattack.value = 100
+		game.badlife.value = 520
+		game.enemyarmor.value = "0"
+		game.f1.value = "Now you are in big truble!!!"
+		game.item1.value = "The Big Silver Sword"
+		game.item2.value = ""
+		game.imgweapon.src = "../Weapons/Sword+4.bmp"
+		game.items.value = "Big Silver Sword"
+		game.explaneline.value = " The Big Silver Sword is a very special sword you get it in level 69, it have 50 attackdamage."
+		game.attackdamage.value = "50"
+		game.badlevel.value = "Boss"
 		name();
 		return false;
 	}
 	if (namer === null) namer = 'Adventurer'
-	document.game.name.value = namer
+	game.name.value = namer
 }	
 
 // 11101
 function maxlife() {
-	var yourlife = parseFloat(document.game.life.value)
-	var cash = parseFloat(document.game.money.value)
+	var yourlife = parseFloat(game.life.value)
+	var cash = parseFloat(game.money.value)
 	if (yourlife > 100) {
-		document.game.life.value = 100
+		game.life.value = 100
 		alert('You can max. have 100 lifepoints.')
 	}
 	setTimeout(maxlife,100)
@@ -1540,6 +1539,43 @@ a, input[type="button"], img[onclick] { cursor: pointer; }
 input        { cursor: url(cursor.cur) }
 textarea     { cursor: url(cursor.cur); box-sizing: border-box; width: 874px; height: 199px; resize: none; overflow: auto; }
 scrollbar    { cursor: url(cursor.cur) }
+/* Explicit geometry replaces IE's intrinsic form-control/table sizing. */
+form[name="game"] { position: relative; width: 1024px; height: 920px; margin: 0; }
+form[name="game"] > p { display: none; }
+input[type="text"] { box-sizing: border-box; padding: 2px; border: 0 !important; background: #000; color: #fff; }
+input[type="button"] { border: 1px solid #888 !important; padding: 2px 8px; }
+#inventory table { table-layout: fixed; width: 482px; }
+#inventory tr { height: 25px; }
+#inventory td:first-child { width: 131px; white-space: nowrap; }
+#inventory td:last-child { width: 351px; }
+#inventory input { width: 100%; }
+#messages > table { table-layout: fixed; width: 1024px; height: 244px; }
+#messages > table > tbody > tr > td:first-child,
+#messages > table > tbody > tr > td:last-child { width: 482px; }
+#messages > table > tbody > tr > td:nth-child(2) { width: 60px; background-position: center; }
+#messages input { max-width: 100%; }
+#messages > table > tbody > tr:nth-child(n+11) { display: none; }
+#messages > table > tbody > tr:last-child { display: table-row; height: 0; }
+#messages > table > tbody > tr:last-child > td { height: 0; padding: 0; }
+#messages > table > tbody > tr:last-child p { display: none; }
+#messages span:has(textarea) { position: absolute !important; left: 0 !important; top: 455px !important; }
+span:has(> textarea[name="storyline"]) { top: 500px !important; }
+textarea[name="storyline"], textarea[name="explaneline"] {
+  display: block; width: 874px; height: 199px; padding: 6px;
+  font-family: "Monotype Corsiva", "Times New Roman", serif !important;
+  font-size: 14pt !important; line-height: 1.25; resize: none;
+  white-space: pre-wrap; overflow-wrap: break-word; border: 0 !important;
+  scrollbar-color: #777 #000;
+}
+span:has(#fpAnimswapImgFP1) > table { table-layout: fixed; width: 1024px; }
+span:has(#fpAnimswapImgFP1) p { margin: 0; }
+#fpAnimswapImgFP1 { display: block; }
+form > div:has(input[name="money"]) { top: 0 !important; left: 0 !important; }
+form > div:has(input[name="money"]) table { table-layout: fixed; height: 205px; }
+form > div:has(input[name="money"]) tr { height: 29px; }
+form > div:has(input[name="money"]) td { height: auto; }
+form > div:has(input[name="money"]) p { margin: 0; }
+form > div:has(input[name="money"]) img { display: block; }
 </style>
 <bgsound src="bgmusic.wav" loop="-1">
 <script language="Javascript">
@@ -1569,7 +1605,7 @@ document.onmousedown=click
  </table>
  </span>
  <!-- Scrollbar Hidder -->
- <span style="position: absolute; left: 844; top: 587; z-index: 2; height: 21; width: 38">
+ <span hidden>
  <table cellspacing="0" cellpadding="0" bgcolor="#000000" width="16" height="178">
   <tr>
    <td></td>
@@ -1585,7 +1621,7 @@ document.onmousedown=click
  <!-- Ring --><span style="position: absolute; left: 1; top: 161; z-index: 2"><img border="0" name="imgring" src="../Ring/Normal.bmp" width="62" height="69"></span> 
  <!-- Stone --><span style="position: absolute; left: 154; top: 191; z-index: 2"><img border="0" name="imgstone" src = "../magic%20stone/Normal.bmp" width="50" height="39"></span> 
  <!-- Actions -->
- <span style="position: absolute; left: 1; top: 255; width: 1027; height: 590">
+ <span id="messages" style="position: absolute; left: 0; top: 255px; width: 1024px; height: 244px">
  <table width="1024" cellspacing="0" cellpadding="0" height="949">
   <tr>
    <td valign="middle" align="right" height="25"><input onfocus="blur()" type="text"
@@ -1753,7 +1789,7 @@ document.onmousedown=click
  </table>
  </span>
  <!-- Inventory -->
- <span style="position: absolute; left: 0; top: 291; width: 771; height: 204">
+ <span id="inventory" style="position: absolute; left: 0; top: 291px; width: 482px; height: 204px">
  <table width="445" cellspacing="0" cellpadding="0">
   <tr>
    <td width="131" valign="middle" align="right"
