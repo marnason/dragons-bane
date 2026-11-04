@@ -1011,8 +1011,10 @@ if (99 > yourlevel) {
 				}
 			}
 			if (randum1 > (yougethit + armorbonus)) {
-			game.life.value = yourlife - (enemyattack - shieldbonus) - (2 * yourlevel)
-			game.f2.value = "You got hit for " + ((enemyattack - shieldbonus) + (2 * yourlevel)) + " hit points"
+			// Protection can block a hit completely, but cannot turn it into healing.
+			var damage = Math.max(0, enemyattack - shieldbonus + (2 * yourlevel))
+			game.life.value = yourlife - damage
+			game.f2.value = "You got hit for " + damage + " hit points"
 			}
 		}
 
@@ -1516,7 +1518,8 @@ function maxlife() {
 		game.life.value = 100
 		alert('You can max. have 100 lifepoints.')
 	}
-	setTimeout(maxlife,100)
+	// The Attack/Heal controls call this after their action bubbles up.
+	// Do not start another recurring timer on every click.
 }
 </script>
 
