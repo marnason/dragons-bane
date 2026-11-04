@@ -8,18 +8,25 @@ A small compatibility layer replaces browser behavior that only existed in old
 versions of Internet Explorer, while missing artwork falls back to the assets
 that survived on the drive.
 
-### Combat compatibility correction
+### Preservation baseline
 
-The recovered `INDEX.htm` awards 20 protection for the "Shield +1" drop.
-Its original damage formula can therefore become negative against weak enemies.
-The restoration retains the protection value and formula but floors damage at
-zero so attacks cannot heal the player. This is a deliberate correction to the
-recovered source, not a JavaScript arithmetic compatibility change. The other
-recovered version, `thegame.htm`, does not contain this shield drop.
+The author confirmed that **`thegame.htm` is the version they played**.
+That file remains untouched as the source of truth. `game.js` contains its
+gameplay script with explicit form access and the name prompt renamed to avoid
+`window.name`. Cancelling the prompt uses "Adventurer". The 100-health check
+runs once after Attack/Heal instead of accumulating recurring timers; its cap
+and warning are retained.
 
-The 100-health check still runs after Attack and Heal, including the original
-warning when health exceeds 100. It no longer starts a new recurring timer on
-every click. Other combat, reward, and progression quirks remain unchanged.
+The initial restoration mistakenly used `INDEX.htm`, a different version.
+Its extra shield drop, cheats, and boss changes have been removed. Starting
+armor is restored to 20. The original damage formula is restored without a
+zero-damage clamp: `thegame.htm` never grants the problematic 20-point shield.
+The repaired, centered presentation and disabled close button remain.
+
+Run `node tests/game-parity.cjs` to compare the restored gameplay directly with
+the recovered script across encounters, combat, level transitions, rewards,
+healing, item purchases, and cheats. Unfinished shop behavior and other original
+quirks are deliberately preserved.
 
 ## Play locally
 
