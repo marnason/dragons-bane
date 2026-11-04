@@ -1,12 +1,39 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Language" content="fo">
 <meta name="GENERATOR" content="Microsoft FrontPage 6.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title> </title>
+<title>The Dragon's Bane</title>
 <script>
+// Compatibility bridge for the named form/image globals supported by the
+// browsers this game was written for.
+let game
+function startGame() {
+	const form = document.forms.namedItem('game')
+	game = new Proxy(form, {
+		get(target, property) {
+			return target.elements.namedItem(property) ||
+				target.querySelector(`[name="${String(property)}"]`) ||
+				Reflect.get(target, property)
+		}
+	})
+	Object.defineProperty(document, 'game', { configurable: true, value: game })
+	chooseName()
+}
+
+document.addEventListener('error', function (event) {
+	const image = event.target
+	if (!(image instanceof HTMLImageElement)) return
+	if (image.dataset.fallbackApplied) return
+	image.dataset.fallbackApplied = 'true'
+	if (image.name === 'imgbad') image.src = 'auto.png'
+	else if (image.name === 'imgweapon') image.src = 'ShortSword1.bmp'
+	else image.style.visibility = 'hidden'
+}, true)
+
 // Inhald av scriptinum
 // Monster Generator   : 10000
 // Monsters            : 10001
@@ -63,7 +90,7 @@ if (yourlevel == 1) {
 }
 if (bigrandum == 18) {
 	document.game.money.value = Math.round(cash - (cash * .09))
-	document.game.f2.value = "A thief stole " + Math.round(cash * .09) + " ± from you."
+	document.game.f2.value = "A thief stole " + Math.round(cash * .09) + " Â± from you."
 }
 if (1 > yourlife) {
 	parent.close()
@@ -595,7 +622,7 @@ if (yourlevel > 2){
 	}
 		if (randum == 50) {
 	document.game.money.value = cash - 49
-	document.game.f2.value = "A thief stole 49 ± from you."
+	document.game.f2.value = "A thief stole 49 Â± from you."
 	document.game.badguy.value = "Something"
 	document.game.enemyattack.value = 60
 	document.game.enemyarmor.value = 2
@@ -933,7 +960,7 @@ if (99 > yourlevel) {
 		document.game.badlife.value = 500
 		document.game.item1.value = ""
 		document.game.item2.value = ""
-		document.game.explaneline.value = "The Shotokahn ring, give you 1200± ( ± = Gold ) and 600 experince."
+		document.game.explaneline.value = "The Shotokahn ring, give you 1200Â± ( Â± = Gold ) and 600 experince."
 		document.game.money.value = (cash +1200)
 		document.game.experience.value = (experince +600)
 		document.game.badlevel.value = "Boss"
@@ -955,7 +982,7 @@ if (99 > yourlevel) {
 		document.game.f2.value = " You found 1025 gold. "
 		document.game.money.value = (cash +1025)
 		document.game.imgring.src = "../Ring/.bmp"
-		document.game.explaneline.value = "The Dodgeball ring, give you 1000± ( ± = Gold ) and 100 experince."
+		document.game.explaneline.value = "The Dodgeball ring, give you 1000Â± ( Â± = Gold ) and 100 experince."
 		document.game.money.value = (cash +1000)
 		document.game.experience.value = (experince +100)
 		document.game.badlevel.value = "Boss"
@@ -1024,7 +1051,7 @@ if (1 > enemylife) {
 			}
 			if (yourlevel == 99) {
 			document.game.badguy.value = "The World is Yours"
-			document.game.storyline.value = "You made it... The game is over... You won... Special thanks to: Patur Hojgaard Jacobsen: Programme. Tummas Jóhan Sigvardsen : Programme."
+			document.game.storyline.value = "You made it... The game is over... You won... Special thanks to: Patur Hojgaard Jacobsen: Programme. Tummas JĂłhan Sigvardsen : Programme."
 			}
 			if (yourlevel == 69) {
 			document.game.imgweapon.src = "../Weapons/Sword+4.bmp"
@@ -1115,7 +1142,10 @@ var yourexperience = parseFloat(document.game.experience.value)
 	}
 }
 // 10111
-function name() {
+function chooseName() {
+	// Keep the original recursive name/cheat prompt flow without colliding with
+	// the browser's built-in window.name string.
+	const name = chooseName
 	var namer = prompt('Write your name here:','')
 	var maner = document.game.name.value
 	var hero = document.game.hero.src
@@ -1395,7 +1425,7 @@ function name() {
 		document.game.amuletbonus.value = "30"
 		document.game.f1.value = "You get The Dodgeball Amulet"
 		document.game.f2.value = "You get The Dodgeball Ring"
-		document.game.explaneline.value = "You get all the Dodgeball stuffs, and the Dodgeball ring, give you 1000± ( ± = Gold ) and 100 experince. The Amulet give you 5 attackdamage and a free ticket to level 5 :-) The Dodgeball shield is a very special shield, you can only get it if you do this the dodgeball cheat. The Dodgeball Stone give you 50 lifepoints and it is only working one time."
+		document.game.explaneline.value = "You get all the Dodgeball stuffs, and the Dodgeball ring, give you 1000Â± ( Â± = Gold ) and 100 experince. The Amulet give you 5 attackdamage and a free ticket to level 5 :-) The Dodgeball shield is a very special shield, you can only get it if you do this the dodgeball cheat. The Dodgeball Stone give you 50 lifepoints and it is only working one time."
 		document.game.imgring.src = "../Ring/dodgeball.bmp"
 		document.game.yourring.value = "The Dodgeball Ring" 
 		document.game.money.value = 1100
@@ -1475,6 +1505,8 @@ function name() {
 		name();
 		return false;
 	}
+	if (namer === null) namer = 'Adventurer'
+	document.game.name.value = namer
 }	
 
 // 11101
@@ -1485,7 +1517,7 @@ function maxlife() {
 		document.game.life.value = 100
 		alert('You can max. have 100 lifepoints.')
 	}
-	setTimeout('maxlife();',1)
+	setTimeout(maxlife,100)
 }
 </script>
 
@@ -1501,7 +1533,11 @@ function clickSwapImg() {}
 </script>
 <!-- OnMouseOver Function end -->
 <style>
+html { background: #000; }
 body         { cursor: url(cursor.cur); scrollbar-track-color: #000000; scrollbar-arrow-color: #000000; scrollbar-face-color: #000000; scrollbar-highlight-color: #000000; scrollbar-3dlight-color: #000000; scrollbar-shadow-color: #000000; scrollbar-darkshadow-color: #000000 }
+body { margin: 0; min-width: 1024px; min-height: 805px; overflow: auto; font-family: Georgia, "Times New Roman", serif; }
+button, input, textarea { font: inherit; }
+a, input[type="button"], img[onclick] { cursor: pointer; }
 input        { cursor: url(cursor.cur) }
 textarea     { cursor: url(cursor.cur) }
 scrollbar    { cursor: url(cursor.cur) }
@@ -1511,13 +1547,13 @@ scrollbar    { cursor: url(cursor.cur) }
 function click() {
 	if (event.button == 2) {
 		alert('Function not avalible.')
-		alert('This game is copyright ©, please dont copy. Copy is Crime.')
+		alert('This game is copyright Â©, please dont copy. Copy is Crime.')
 		;}
 }
 document.onmousedown=click
 </script>
 </head>
-<body onload="name()" topmargin="0" leftmargin="0" bgcolor="#000000" text="#FFFFFF" language="Javascript1.2">
+<body onload="startGame()" topmargin="0" leftmargin="0" bgcolor="#000000" text="#FFFFFF">
 <form name="game"> 
  <!-- Spans start here -->
  <!-- Titlebar -->
