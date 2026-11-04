@@ -1,0 +1,1054 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250">
+<meta http-equiv="Content-Language" content="fo">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title> </title>
+<script>
+// Inhald av scriptinum
+// Monster Generator   : 10000
+// Monsters            : 10001
+// Attack              : 11000
+// Level Up            : 11011
+// StoryLine           : 11111
+// Hit or Miss         : 10101
+// Rewards             : 01010
+// Heal                : 00000
+// Show Stuff/Store1   : 00100
+// Store2              : 01110
+// Buy Stuff/Items1    : 11110
+// Items2              : 01111
+// Name                : 10111
+// Maxlife             : 11101
+
+
+
+
+// 10000
+function opponent() {
+var bigrandum = Math.round(Math.random() * 20)
+var randum1 = Math.round(Math.random() * 2)
+var randum2 = Math.round(Math.random() * 3)
+var yourlevel = parseFloat(document.game.level.value)
+
+var randum = randum1 + randum2 + (yourlevel * 2)
+var yourlife = parseFloat(document.game.life.value)
+var cash = parseFloat(document.game.money.value)
+var yourattack = parseFloat(document.game.attackdamage.value) 
+	
+if (document.game.name.value == 'null') {
+	alert('You have to write a name in the box. :/')
+	name()
+	return false
+}
+if (document.game.badguy.value == 'White Tiger') {
+	if (document.game.badlife.value > 1) {
+		return false
+	}
+}
+if (document.game.badguy.value == 'Demon') {
+	if (document.game.badlife.value > 1) {
+		return false
+	}
+}
+if (document.game.badguy.value == 'Shotokahn') {
+	if (document.game.badlife.value > 1) {
+		return false
+	}
+}
+if (yourlevel == 1) {
+	document.game.storyline.value = "As soon as you leave the gates of your city you are attacked by monsters.  Your guards are frightened because they have never seen creatures like these so you pull out your sword and fight with them.  They remind you of the monsters that were created by the late mad scientist Baldo that you defeated 10 years ago."
+}
+if (bigrandum == 18) {
+	document.game.money.value = Math.round(cash - (cash * .09))
+	document.game.f2.value = "A thief stole " + Math.round(cash * .09) + " ± from you."
+}
+if (1 > yourlife) {
+	parent.close()
+	return false
+}	
+// 10001
+	if (randum == 2) {
+	document.game.badguy.value = "Wild Cat"
+	document.game.enemyattack.value = 3
+	document.game.enemyarmor.value = 0
+	document.game.badlife.value = 11
+	}
+	 if (randum == 3) {
+	document.game.badguy.value = "Zombie"
+	document.game.enemyattack.value = 5
+	document.game.enemyarmor.value = 0
+	document.game.badlife.value = 15
+	}
+	if (randum == 4) {
+	document.game.badguy.value = "Goblin Shaman"
+	document.game.enemyattack.value = 4
+	document.game.enemyarmor.value = 1
+	document.game.badlife.value = 13
+	}
+	if (randum == 5) {
+	document.game.badguy.value = "Wolf"
+	document.game.enemyattack.value = 6
+	document.game.enemyarmor.value = 1
+	document.game.badlife.value = 20
+	}
+	if (randum == 6) {
+	document.game.badguy.value = "Veteran"
+	document.game.enemyattack.value = 7
+	document.game.enemyarmor.value = 2
+	document.game.badlife.value = 24
+	}
+	if (randum == 7) {
+	document.game.badguy.value = "Skeleton"
+	document.game.enemyattack.value = 6
+	document.game.enemyarmor.value = 0
+	document.game.badlife.value = 32
+	}
+	if (randum == 8) {
+	document.game.badguy.value = "Shadow"
+	document.game.enemyattack.value = 8
+	document.game.enemyarmor.value = 3
+	document.game.badlife.value = 40
+	}
+	if (randum == 9) {
+	document.game.badguy.value = "Ooze"
+	document.game.enemyattack.value = 7
+	document.game.enemyarmor.value = 3
+	document.game.badlife.value = 41
+	}
+	if (randum == 10) {
+	document.game.badguy.value = "Pirate"
+	document.game.enemyattack.value = 12
+	document.game.enemyarmor.value = 2
+	document.game.badlife.value = 48
+	}
+	if (randum == 11) {
+	document.game.badguy.value = "Wraith"
+	document.game.enemyattack.value = 9
+	document.game.enemyarmor.value = 5
+	document.game.badlife.value = 39
+	}
+if (yourlevel > 2){
+	if (randum == 12) {
+	document.game.badguy.value = "Minotaur"
+	document.game.enemyattack.value = 13
+	document.game.enemyarmor.value = 4
+	document.game.badlife.value = 54
+	}
+	if (randum == 13) {
+	document.game.badguy.value = "Gog"
+	document.game.enemyattack.value = 12
+	document.game.enemyarmor.value = 2
+	document.game.badlife.value = 50
+	}
+	if (randum == 14) {
+	document.game.badguy.value = "Giant"
+	document.game.enemyattack.value = 16
+	document.game.enemyarmor.value = 5
+	document.game.badlife.value = 80
+	}
+	if (randum == 15) {
+	document.game.badguy.value = "Sea Salamander"
+	document.game.enemyattack.value = 16
+	document.game.enemyarmor.value = 4
+	document.game.badlife.value = 69
+	}
+	if (randum == 16) {
+	document.game.badguy.value = "Pit Fiend"
+	document.game.enemyattack.value = 18
+	document.game.enemyarmor.value = 3
+	document.game.badlife.value = 72
+	}
+}
+
+	if (randum == 17) {
+	document.game.badguy.value = "Giant Turtle"
+	document.game.enemyattack.value = 20
+	document.game.enemyarmor.value = 6
+	document.game.badlife.value = 80
+	}
+	if (randum == 18) {
+	document.game.life.value = Math.round(yourlife * .40)
+	document.game.badguy.value = "Cobra"
+	document.game.enemyattack.value = 16
+	document.game.enemyarmor.value = 8
+	document.game.badlife.value = 70
+	document.game.f2.value = "The Cobra poisened you. You lost " + Math.round(yourlife * .15) + " hit points."
+	
+	}
+	if (randum == 19) {
+	document.game.badguy.value = "Mummy"
+	document.game.enemyattack.value = 19
+	document.game.enemyarmor.value = 1
+	document.game.badlife.value = 80
+	}
+	if (randum == 20) {
+	document.game.badguy.value = "Gargoyle"
+	document.game.enemyattack.value = 18
+	document.game.enemyarmor.value = 5
+	document.game.badlife.value = 90
+	}
+	if (randum == 21) {
+	document.game.badguy.value = "Doom Knight"
+	document.game.enemyattack.value = 21
+	document.game.enemyarmor.value = 8
+	document.game.badlife.value = 110
+	}
+	if (randum > 22) {
+	document.game.badguy.value = "Ogre"
+	document.game.enemyattack.value = 24
+	document.game.enemyarmor.value = 5
+	document.game.badlife.value = 100
+	}
+	if (randum > 23) {
+	document.game.badguy.value = "Efreet"
+	document.game.enemyattack.value = 22
+	document.game.enemyarmor.value = 3
+	document.game.badlife.value = 95
+	}
+	if (randum == 24) {
+	document.game.life.value = yourlife - 6
+	document.game.f2.value = "Ouch!!! You hit a trap. Lost 6 hit points."
+	}
+	if (randum == 25) {
+	document.game.badguy.value = "Hell Hound"
+	document.game.enemyattack.value = 26
+	document.game.enemyarmor.value = 5
+	document.game.badlife.value = 112
+	}
+	if (randum == 26) {
+	document.game.badguy.value = "Ent"
+	document.game.enemyattack.value = 26
+	document.game.enemyarmor.value = 4
+	document.game.badlife.value = 126
+	}
+	if (randum == 27) {
+	document.game.money.value = cash + 17
+	document.game.f1.value = "You found 17 Gold"
+	}
+	if (randum == 28) {
+	document.game.badguy.value = "Vampire"
+	document.game.enemyattack.value = 29
+	document.game.enemyarmor.value = 3
+	document.game.badlife.value = 104
+	}
+	if (randum == 29)  {
+	document.game.badguy.value = "Dragon Worm"
+	document.game.enemyattack.value = 34
+	document.game.enemyarmor.value = 9
+	document.game.badlife.value = 141
+	}
+	if (randum == 30) {
+	document.game.badguy.value = "Abomination"
+	document.game.enemyattack.value = 33
+	document.game.enemyarmor.value = 3
+	document.game.badlife.value = 180
+	}
+	if (randum == 31) {
+	document.game.life.value = Math.round(yourlife * .70)
+	document.game.f2.value = "Ouch!! You hit a trap. lost " + Math.round(yourlife * .30) + " hit points."
+	}
+	if (randum == 32) {
+	document.game.badguy.value = "Lizard"
+	document.game.enemyattack.value = 31
+	document.game.enemyarmor.value = 5
+	document.game.badlife.value = 156
+	}
+	if (randum == 33) {
+	document.game.badguy.value = "Devil"
+	document.game.enemyattack.value = 39
+	document.game.enemyarmor.value = 8
+	document.game.badlife.value = 192
+	}
+	if (randum == 34) {
+	document.game.badguy.value = "Earth Elemental"
+	document.game.enemyattack.value = 31
+	document.game.enemyarmor.value = 8
+	document.game.badlife.value = 110
+	}
+	if (randum == 35) {
+	document.game.badguy.value = "Air Elemental"
+	document.game.enemyattack.value = 31
+	document.game.enemyarmor.value = 8
+	document.game.badlife.value = 108
+	}
+	if (randum == 36) {
+	document.game.badguy.value = "Water Elemental"
+	document.game.enemyattack.value = 29
+	document.game.enemyarmor.value = 8
+	document.game.badlife.value = 118
+	}
+	if (randum == 37) {
+	document.game.badguy.value = "Naka"
+	document.game.enemyattack.value = 38
+	document.game.enemyarmor.value = 12
+	document.game.badlife.value = 128
+	}
+	if (randum == 38) {
+	document.game.badguy.value = "Tornado"
+	document.game.enemyattack.value = 40
+	document.game.enemyarmor.value = 16
+	document.game.badlife.value = 180
+	}
+	if (randum == 39) {
+	document.game.badguy.value = "Bone Dragon"
+	document.game.enemyattack.value = 42
+	document.game.enemyarmor.value = 11
+	document.game.badlife.value = 165
+	}
+	if (randum == 40) {
+	document.game.life.value = Math.round(yourlife * .70)
+	document.game.f2.value = "Ouch!! You hit a trap. Lost " + Math.round(yourlife * .40) + " hit points."
+	}
+	if (randum == 41) {
+	document.game.badguy.value = "Black Dragon"
+	document.game.enemyattack.value = 50
+	document.game.enemyarmor.value = 12
+	document.game.badlife.value = 190
+	}
+	if (randum == 42) {
+	document.game.badguy.value = "Juggernaut"
+	document.game.enemyattack.value = 52
+	document.game.enemyarmor.value = 8
+	document.game.badlife.value = 200
+	}
+	if (randum == 43) {
+	document.game.badguy.value = "Skeleton Warrior"
+	document.game.enemyattack.value = 48
+	document.game.enemyarmor.value = 6
+	document.game.badlife.value = 180
+	}
+	if (randum == 44) {
+	document.game.badguy.value = "Warlock"
+	document.game.enemyattack.value = 51
+	document.game.enemyarmor.value = 9
+	document.game.badlife.value = 190
+	}
+	if (randum == 45) {
+	document.game.badguy.value = "Satyr"
+	document.game.enemyattack.value = 55
+	document.game.enemyarmor.value = 10
+	document.game.badlife.value = 205
+	}
+	if (randum == 46) {
+	document.game.badguy.value = "Golem"
+	document.game.enemyattack.value = 56
+	document.game.enemyarmor.value = 20
+	document.game.badlife.value = 145
+	}
+	if (randum == 47) {
+	document.game.badguy.value = "Follower of Ra"
+	document.game.enemyattack.value = 58
+	document.game.enemyarmor.value = 9
+	document.game.badlife.value = 190
+	}
+	if (randum == 48) {
+	document.game.badguy.value = "Swamp Beast"
+	document.game.enemyattack.value = 58
+	document.game.enemyarmor.value = 5
+	document.game.badlife.value = 250
+	}
+	if (randum == 49) {
+	document.game.money.value = cash - 49
+	document.game.badguy.value = "Burglar"
+	document.game.enemyattack.value = 21
+	document.game.enemyarmor.value = 2
+	document.game.badlife.value = 60
+	document.game.f2.value = "The Burglar stole some money from you."
+	}
+	
+}
+// 11000
+	function attacker() {
+	document.game.f1.value = ""
+	document.game.f2.value = ""
+	var swordbonus = parseFloat(document.game.swordbonus.value)
+	var armorbonus = parseFloat(document.game.armorbonus.value)
+	var shieldbonus = parseFloat(document.game.shieldbonus.value)
+	var amuletbonus = parseFloat(document.game.amuletbonus.value)
+	var ringbonus = parseFloat(document.game.ringbonus.value)
+	var randum = Math.round(Math.random() * 20)
+	var randum1 = Math.round(Math.random() * 40)
+	var yougethit = parseFloat(document.game.armorclass.value)
+	var hegethit = parseFloat(document.game.enemyarmor.value)
+	var hurted = parseFloat(document.game.enemyattack.value)
+	var enemylife = parseFloat(document.game.badlife.value)
+	var yourattack = parseFloat(document.game.attackdamage.value)
+	var yourlife = parseFloat(document.game.life.value)
+	var enemyattack = parseFloat(document.game.enemyattack.value)
+	var yourexperience = parseFloat(document.game.experience.value)
+	var yourlevel = parseFloat(document.game.level.value)
+	var yourmoney = parseFloat(document.game.money.value)
+	var enemyarmor = parseFloat(document.game.enemyarmor.value)
+	var baldoo = parseFloat(document.game.baldo.value)
+	var story = parseFloat(document.game.story.value)
+// 11011
+if (99 > yourlevel) {
+	if (yourexperience > ((yourlevel * 100) + .35 * yourexperience)) {
+	document.game.level.value = yourlevel + 1
+	document.game.f1.value = "LEVEL UP!!"
+	document.game.life.value = 100
+	document.game.attackdamage.value = yourattack + 2
+		if (26 > yougethit) {
+		document.game.armorclass.value = yougethit + 2
+		}
+// 11111
+	if (yourlevel == 1) {
+	document.game.storyline.value = "It has become apparent that this will be a much tougher trip than you expected.  You have only traveled a few miles outside your gate supplies are already low and your soldiers have taken a beating. You decide to go back to your castle and regroup."
+	}
+	if (yourlevel == 2) {
+	document.game.storyline.value = "When you get to the castle the gates are already open. You go inside and find the city infested with monsters.  There is no resistance from your soldiers and it looks like they just let them in.  You spot one and ask what is going on and he attacks you.  An arrow whizzes by your head and you look up at the wall and see your archers firing on you. Even the citizens are attacking.  You decide to head to the treasure room and get Baldo's equipment. Something you had hoped you would never have to use again."
+	}
+	if (yourlevel == 3) {
+	document.game.storyline.value = "You have fought your way to the treasure room.  The doors are already open. You step in and hear a growl behind you. You look back and see your favorite pet. A huge white tiger."
+	document.game.badguy.value = "White Tiger"
+	document.game.enemyattack.value = 11
+	document.game.enemyarmor.value = 5
+	document.game.badlife.value = 100
+	}
+	if (yourlevel == 4) {
+	document.game.storyline.value = "You have been stripped of your kingdom and the last of your soldiers has been killed.  Now you are completely on your own and surrounded by strange beasts, just like when your village was attacked.  Hopefully your friend will know what is going on and be able to help."
+	}
+	if (yourlevel == 5) {
+	document.game.storyline.value = "Finally you arrive at your destination.  After asking several questions in a row the king just tells you not to worry and that he can explain everything. He says he has something to show you and you follow him down several flights of stairs.  You go through a large door and are now on a balcony about ten feet from the ground in a large cave like room. The king claps twice and says that this should explain everything.  Two guards rush in and throw you over the balcony. As soon as you hit the ground monsters attack from all sides."
+	}
+	if (yourlevel == 6) {
+	document.game.storyline.value = "You look up at the balcony and see the king standing there laughing.  KING--I suppose I owe you some answers before you die. All these years and you have never figured it out. Baldo was my son and you killed him.  He was a genuois and you were to stupid to realize it.  Thank you for taking care of his weopons though, to bad you were to stupid to use them. Don't worry about your family they are now my loyal servants along with the rest of your kingdom. I would like to stay here and watch you die but Im very busy, goodbye."
+	}
+	if (yourlevel == 7) {
+	document.game.storyline.value = "You have fought your way across the room. It is to dark to see very well but you feel a cold breeze and follow it to a cave that goes even deeper underground. The entire room smells like rotting carcasses but as you enter the cave the smell becomes overwhelming."
+	}
+	if (yourlevel == 8) {
+	document.game.storyline.value = "After traveling for miles you are exhausted and about to give up and let the monsters overtake you. You hear some loud noises echoing through the cave. It sounds as if a fierce battle is being fought.  You hear a scream that sounds very human and then it gets quiet again."
+	}
+	if (yourlevel == 9) {
+	document.game.storyline.value = "You see a man lying on the ground. He looks badly injured.--WARRIOR--I am Shotokahn. I was this kingdoms fiercest and most loyal warrior. The king threw me in here when I objected to his attacking your country. It is not his fault though, the items you acquired from Baldo were cursed. If any man posses them for to long all his friends will become enemies. He banished Baldo from this Kingdom because he knew he was evil. The demon I was just fighting is the one that granted Baldo his powers. The only way to break the curse is to kill him. Here take my sword."
+		document.game.swordbonus.value = 25
+		document.game.items.value = "Shotokahn's Blade+25"
+		document.game.badguy.value = "Demon"
+		document.game.enemyattack.value = 49
+		document.game.enemyarmor.value = 5
+		document.game.badlife.value = 438
+		}
+	if (yourlevel == 12) {
+	document.game.storyline.value = "You reach the castle and the king looks very happy to see you. --KING-- Thank you for killing that demon. Unfortunately for though I am the one that made the deal with that demon to get my son his powers. It forbade me from having him killed myself. With him out of the way I do not have to repay my debt and nothing stands in my way. Good work Shoto in tricking him into killing the demon. Now kill that fool."
+		document.game.badguy.value = "Shotokahn"
+		document.game.enemyattack.value = 30
+		document.game.enemyarmor.value = 5
+		document.game.badlife.value = 500
+	}
+	if (yourlevel == 14) {
+	document.game.storyline.value = "You find Baldo's Ring in the treasure room. The king must have been in a hurry to leave such an important item. "
+	document.game.yourring.value = "BALDO'S Ring"
+	document.game.ringbonus.value = 6
+	}
+	return false
+	}
+}
+// 10101
+	if (1 > yourlife) {
+	document.game.f1.value = "DEAD"
+	document.game.f2.value = "DEAD"
+	document.game.experience.value = 0
+	document.game.money.value = 0
+	document.game.storyline.value = "DEAD"
+	alert("YOU ARE DEAD")
+	parent.close()
+	return false
+	}
+		if (enemylife > 0) {
+			if (randum > (hegethit - ringbonus)) {
+				if (randum == 14) {
+				document.game.badlife.value = enemylife - ((yourattack + swordbonus) * 2)
+				document.game.f1.value = "Critical Hit!!! you did " + Math.ceil(((yourattack + swordbonus) * 2.395791264))  + " points of damage!"
+				} else {
+				document.game.badlife.value = enemylife - (yourattack + swordbonus)
+				document.game.f1.value = "You hit the enemy for " + (yourattack + swordbonus)  + " damage points"
+				}
+			}
+			if (randum1 > (yougethit + armorbonus)) {
+			document.game.life.value = yourlife - (enemyattack - shieldbonus) - (2 * yourlevel)
+			document.game.f2.value = "You got hit for " + ((enemyattack - shieldbonus) + (2 * yourlevel)) + " hit points"
+			}
+		}
+// 01010
+if (1 > enemylife) {
+	document.game.badlife.value = "DEAD"
+	document.game.baldo.value = baldoo + 1
+	document.game.experience.value = yourexperience + (enemyattack * enemyarmor)
+	document.game.money.value = yourmoney + (enemyattack * randum)
+	document.game.f1.value = "You have defeated your oppenent. You aquired " + (enemyattack * randum) + " gold. And " + (enemyattack * enemyarmor) + " experience"
+		if (randum == 15) {
+		document.game.life.value = yourlife + 15
+		document.game.f2.value = "You Found Magic Beans plus 15 to hitpoints"
+      	}
+			if (document.game.enemyattack.value == 49) {
+			document.game.level.value = yourlevel + 1
+			document.game.badguy.value = "DEAD"
+			document.game.storyline.value = "After defeating the demon, Shotokahn emmidiatly asks for his sword back. Shotokahn seems to know the caves very well and you quickly fight your way to the surface. Now you head back to the castle to make sure the curse has been lifted."
+			document.game.swordbonus.value = 5
+		        document.game.items.value = "Sword+5"
+			}
+			if (document.game.enemyattack.value == 30) {
+			document.game.badguy.value = "DEAD"
+			document.game.swordbonus.value = 25
+		        document.game.items.value = "Shotokahn's Blade+25"
+			document.game.storyline.value = "You leave your sword lodged in Shotokahn's chest and take his. Then quickly run after the King."
+			}
+			if (yourlevel == 99) {
+			document.game.badguy.value = "The World is Yours"
+			document.game.storyline.value = "You made it... The game is over... You won... Special thanks to: .:P&aelig;tur H&oslash;jgaard Jacobsen:."
+			}
+			if (document.game.enemyattack.value == 11) {
+			document.game.badguy.value = "DEAD"
+			document.game.storyline.value = "After killing the tiger you look around the treasure room. The only thing missing is Baldo's magic items. If one person is in possession of all of them it will be impossible to defeat them. Without these items and with the whole city turned against you, you are forced to flee.  You quickly gather what equipment you can, your few remaining loyal soldiers and once again set out for your neighboring kingdom."
+			}
+		}
+}
+// 00000
+	function heal() {
+	var yourlife = parseFloat(document.game.life.value)
+	var healpower = parseFloat(document.game.healpower.value)
+	if (1 > yourlife) {
+	document.game.f1.value = "DEAD"
+	document.game.f2.value = "DEAD"
+	document.game.experience.value = 0
+	document.game.money.value = 0
+	alert("YOU ARE DEAD")
+	parent.close()
+	return false
+	}	
+	var cash = parseFloat(document.game.money.value)
+	var yourlife = parseFloat(document.game.life.value)
+	var yourexperience = parseFloat(document.game.experience.value)
+	if (cash > 24) {
+	document.game.money.value = cash - 25
+	document.game.life.value = yourlife + healpower
+	document.game.experience.value = yourexperience + 10
+	}
+	if (yourlife == 100) {
+		document.game.life.value = 100
+		alert('You can max. have 100 lifepoints.')
+		document.game.money.value = cash + 0
+	}
+}
+	
+
+// 00100
+function buysomethin() {
+var yourlife = parseFloat(document.game.life.value)
+var yourlevel = parseFloat(document.game.level.value)
+var randum2 = Math.round(Math.random() * 21)
+var randum = Math.round(Math.random() * 20)
+//================store 1 items======
+	if (randum == 1) {
+	document.game.item1.value = "1"
+	document.game.xitem1.value = 1
+	}
+	if (randum == 2) {
+	document.game.item1.value = "2"
+	document.game.xitem1.value = 2
+	}
+	if (randum == 3) {
+	document.game.item1.value = "3"
+	document.game.xitem1.value = 3
+	}
+	if (randum == 4) {
+	document.game.item1.value = "4"
+	document.game.xitem1.value = 2
+	}
+	if (randum == 5) {
+	document.game.item1.value = "5"
+	document.game.xitem1.value = 5
+	}
+	if (randum == 6) {
+	document.game.item1.value = "6"
+	document.game.xitem1.value = 6
+	}
+	if (randum == 7) {
+	document.game.item1.value = "7"
+	document.game.xitem1.value = 7
+	}
+	if (randum == 8) {
+	document.game.item1.value = "8"
+	document.game.xitem1.value = 8
+	}
+	if (randum == 9) {
+	document.game.item1.value = "9"
+	document.game.xitem1.value = 9
+	}
+
+	if (randum == 10) {
+	document.game.item1.value = "10"
+	document.game.xitem1.value = 10
+	}
+	if (randum == 11) {
+	document.game.item1.value = "11"
+	document.game.xitem1.value = 11
+	}
+	if (randum == 12) {
+	document.game.item1.value = "12"
+	document.game.xitem1.value = 12
+	}
+	if (randum == 13) {
+	document.game.item1.value = "13"
+	document.game.xitem1.value = 13
+	}
+	if (randum == 14) {
+	document.game.item1.value = "14"
+	document.game.xitem1.value = 14
+	}
+	if (randum == 15) {
+	document.game.item1.value = "15"
+	document.game.xitem1.value = 15
+	}
+	if (randum == 16) {
+	document.game.item1.value = "16"
+	document.game.xitem1.value = 16
+	}
+	if (randum == 17) {
+	document.game.item1.value = "17"
+	document.game.xitem1.value = 17
+	}
+	if (randum == 18) {
+	document.game.item1.value = "18"
+	document.game.xitem1.value = 18
+	}
+	if (randum == 19) {
+	document.game.item1.value = "19"
+	document.game.xitem1.value = 19
+	}
+	if (randum == 20) {
+	document.game.item1.value = "20"
+	document.game.xitem1.value = 20
+	}
+
+// 01110
+	if (randum2 == 1) {
+	document.game.item2.value = "1"
+	document.game.xitem2.value = 1
+	}
+	if (randum2 == 2) {
+	document.game.item2.value = "2"
+	document.game.xitem2.value = 2
+	}
+	if (randum2 == 3) {
+	document.game.item2.value = "3"
+	document.game.xitem2.value = 3
+	}
+	if (randum2 == 4) {
+	document.game.item2.value = "4"
+	document.game.xitem2.value = 4
+	}
+	if (randum2 == 5) {
+	document.game.item2.value = "5"
+	document.game.xitem2.value = 5
+	}
+	if (randum2 == 6) {
+	document.game.item2.value = "6"
+	document.game.xitem2.value = 6
+	}
+	if (randum2 == 7) {
+	document.game.item2.value = "7"
+	document.game.xitem2.value = 7
+	}
+	if (randum2 == 8) {
+	document.game.item2.value = "8"
+	document.game.xitem2.value = 8
+	}
+	if (randum2 == 9) {
+	document.game.item2.value = "9"
+	document.game.xitem2.value = 9
+	}
+
+	if (randum2 == 10) {
+	document.game.item2.value = "10"
+	document.game.xitem2.value = 10
+	}
+	if (randum2 == 11) {
+	document.game.item2.value = "11"
+	document.game.xitem2.value = 11
+	}
+	if (randum2 == 12) {
+	document.game.item2.value = "12"
+	document.game.xitem2.value = 12
+	}
+	if (randum2 == 13) {
+	document.game.item2.value = "13"
+	document.game.xitem2.value = 13
+	}
+	if (randum2 == 14) {
+	document.game.item2.value = "14"
+	document.game.xitem2.value = 14
+	}
+	if (randum2 == 15) {
+	document.game.item2.value = "15"
+	document.game.xitem2.value = 15
+	}
+	if (randum2 == 16) {
+	document.game.item2.value = "16"
+	document.game.xitem2.value = 16
+	}
+	if (randum2 == 17) {
+	document.game.item2.value = "17"
+	document.game.xitem2.value = 17
+	}
+	if (randum2 == 18) {
+	document.game.item2.value = "18"
+	document.game.xitem2.value = 18
+	}
+	if (randum2 == 19) {
+	document.game.item2.value = "19"
+	document.game.xitem2.value = 19
+	}
+	if (randum2 == 20) {
+	document.game.item2.value = "20"
+	document.game.xitem2.value = 20
+	}
+	if (randum2 == 21) {
+	document.game.item2.value = "21"
+	document.game.xitem2.value = 21
+	}
+}	
+// 11110
+function buyitem1() {
+var randy = Math.round(Math.random() * 150)
+var theitem = document.game.xitem1.value
+var yourmoney = parseFloat(document.game.money.value)
+var yourattack = parseFloat(document.game.attackdamage.value)
+var yourstuff = document.game.items.value
+var yougethit = parseFloat(document.game.armorclass.value)
+var yourlife = parseFloat(document.game.life.value)
+		var swordbonus = parseFloat(document.game.swordbonus.value)
+		var armorbonus = parseFloat(document.game.armorbonus.value)
+		var shieldbonus = parseFloat(document.game.shieldbonus.value)
+		var amuletbonus = parseFloat(document.game.amuletbonus.value)
+		var ringbonus = parseFloat(document.game.ringbonus.value)
+	if (theitem == 1) {
+		if (yourmoney > 0) {
+	document.game.money.value = yourmoney - 0
+	document.game.swordbonus.value = 0
+	document.game.item1.value = ""
+	document.game.xitem1.value = 0
+	document.game.items.value = ""
+		}
+	}
+}	
+// 01111
+function buyitem2() {
+var theitem = document.game.xitem2.value
+var yourlife = parseFloat(document.game.life.value)
+var yourmoney = parseFloat(document.game.money.value)
+var yourattack = parseFloat(document.game.attackdamage.value)
+var yougethit = parseFloat(document.game.armorclass.value)
+var healpower = parseFloat(document.game.healpower.value)
+var yourexperience = parseFloat(document.game.experience.value)
+		var swordbonus = parseFloat(document.game.swordbonus.value)
+		var armorbonus = parseFloat(document.game.armorbonus.value)
+		var shieldbonus = parseFloat(document.game.shieldbonus.value)
+		var amuletbonus = parseFloat(document.game.amuletbonus.value)
+		var ringbonus = parseFloat(document.game.ringbonus.value)
+	if (theitem == 1) {
+		if (yourmoney > 99) {
+	document.game.money.value = yourmoney - 100
+	document.game.swordbonus.value = 3
+	document.game.item2.value = "Bought"
+	document.game.xitem2.value = 0
+	document.game.items.value = "Sword+3"
+		}
+	}
+}
+// 10111
+function name() {
+	var namer = prompt('Write your name here:','')
+	var maner = document.game.name.value
+	if (namer == 'null') {
+		alert('Your name is not allowed to be null in this game. Write something else. :)')
+		name()
+		return false;
+	}
+	if (namer == '') {
+		alert('You have to write something. Right? :/')
+		name()
+		return false;
+	}
+	if (namer == 'gotoyear3000') {
+		document.game.swordbonus.value = 25
+		document.game.items.value = "Laser Sword"
+		document.game.imgweapon.src = "Weapons/LaserSword.bmp"
+		name();
+		return false;
+	}
+	if (namer == 'goldentreasure') {
+		document.game.money.value = 10000
+		name();
+		return false;
+	}
+	if (namer != '') {
+		document.game.name.value = namer
+	}
+}	
+
+// 11101
+function maxlife() {
+	var yourlife = parseFloat(document.game.life.value)
+	var cash = parseFloat(document.game.money.value)
+	if (yourlife > 100) {
+		document.game.life.value = 100
+		alert('You can max. have 100 lifepoints.')
+	}
+	setTimeout('maxlife();',1)
+}
+</script>
+<!-- OnMouseOver Function begin -->
+<script language="JavaScript" fptype="dynamicanimation">
+<!--
+function dynAnimation() {}
+function clickSwapImg() {}
+//-->
+</script>
+<script language="JavaScript1.2" fptype="dynamicanimation" src="animate.js">
+</script>
+<!-- OnMouseOver Function end -->
+<style>
+body         { cursor: url(cursor.cur); scrollbar-track-color: #000000; scrollbar-arrow-color: #000000; scrollbar-face-color: #000000; scrollbar-highlight-color: #000000; scrollbar-3dlight-color: #000000; scrollbar-shadow-color: #000000; scrollbar-darkshadow-color: #000000 }
+input        { cursor: url(cursor.cur) }
+textarea     { cursor: url(cursor.cur) }
+scrollbar    { cursor: url(cursor.cur) }
+</style>
+<bgsound src="../bgmusic.wav" loop="-1">
+<script language="Javascript">
+function click() {
+	if (event.button == 2) {
+		alert('Function not avalible')
+	;}
+}
+document.onmousedown=click
+</script>
+</head>
+
+<body onload="name()" topmargin="0" leftmargin="0" bgcolor="#000000" text="#FFFFFF">
+
+<form name="game">
+ <!-- Spans start here -->
+ <!-- Titlebar -->
+ <span style="position: absolute; left: 0; top: 0; z-index: 2; width: 1024; height: 25">
+ <table border="0" width="1024" cellpadding="0" cellspacing="0" height="25" background="../images/Titlebar.bmp" style="font-family: Monotype Corsiva; color: #FFFFFF; font-weight: bold">
+  <tr>
+    <td width="50%" valign="top" align="left" height="25">&nbsp;&nbsp; The
+      Dragon's Bane&nbsp;</td>
+ <!-- Exit -->
+    <td width="50%" valign="top" align="right" height="25"><img onmousedown="Javascript:clickSwapImg(document['fpAnimswapImgFP2'])" onmouseup="Javascript:parent.close()" border="0" src="../Images/exit1.bmp" id="fpAnimswapImgFP2" name="fpAnimswapImgFP2" dynamicanimation="fpAnimswapImgFP2" lowsrc="../Images/exit2.bmp" width="20" height="20"></td>
+  </tr>
+ </table>
+ </span>
+ <!-- Scrollbar Hidder -->
+ <span style="position: absolute; left: 844; top: 587; z-index: 2; height: 21; width: 38">
+ <table cellspacing="0" cellpadding="0" bgcolor="#000000" width="16" height="178">
+  <tr>
+   <td></td>
+  </tr>
+ </table>
+ </span>
+ <!-- Weapon -->
+ <span style="position: absolute; left: 0; top: 25; z-index: 2"><img border="0" name="imgweapon" src="../Weapons/ShortSword1.bmp" width="70" height="150"></span>
+ <!-- Actions -->
+ <span style="position: absolute; left: 1; top: 255">
+ <table width="1024" cellspacing="0" cellpadding="0">
+  <tr>
+   <td valign="middle" align="right"><input onfocus="blur()" type="text"
+    name="f1" size="65" maxlength="400"
+    style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000"></td>
+   <td width="60" background="../images/center.bmp">&nbsp;</td>
+   <td valign="middle" align="left"><input onfocus="blur()" type="text"
+    name="f2" size="65" maxlength="400"
+    style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000"></td>
+  </tr>
+ </table>
+ </span>
+ <!-- Inventory -->
+ <span style="position: absolute; left: 0; top: 291">
+ <table width="445" cellspacing="0" cellpadding="0">
+  <tr>
+   <td width="151" valign="middle" align="right"
+   style="font-family: Monotype Corsiva; color: #FFFFFF; font-weight: bold">Weapon<b><font
+    face="Monotype Corsiva"> :</font></b></td>
+   <td style="font-family: Monotype Corsiva; color: #FFFFFF; font-weight: bold"
+   valign="middle" align="left" width="279"><input onfocus="blur()" type="text"
+    name="items" size="55"
+    style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000" value="Short Sword / +1"></td>
+  </tr>
+  <tr>
+   <td width="151" valign="middle" align="right"
+   style="font-family: Monotype Corsiva; color: #FFFFFF; font-weight: bold">Shield<b><font
+    face="Monotype Corsiva"> :</font></b></td>
+   <td style="font-family: Monotype Corsiva; color: #FFFFFF; font-weight: bold"
+   valign="middle" align="left" width="279"><input onfocus="blur()" type="text"
+    name="yourshield" size="55"
+    style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000"></td>
+  </tr>
+  <tr>
+   <td width="151" valign="middle" align="right"
+   style="font-family: Monotype Corsiva; color: #FFFFFF; font-weight: bold">Armor<b><font
+    face="Monotype Corsiva"> :</font></b></td>
+   <td style="font-family: Monotype Corsiva; color: #FFFFFF; font-weight: bold"
+   valign="middle" align="left" width="279"><input onfocus="blur()" type="text"
+    name="yourarmor" size="55"
+    style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000"></td>
+  </tr>
+  <tr>
+   <td width="151" valign="middle" align="right"
+   style="font-family: Monotype Corsiva; color: #FFFFFF; font-weight: bold">Amulet<b><font
+    face="Monotype Corsiva"> :</font></b></td>
+   <td style="font-family: Monotype Corsiva; color: #FFFFFF; font-weight: bold"
+   valign="middle" align="left" width="279"><input onfocus="blur()" type="text"
+    name="youramulet" size="55"
+    style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000"></td>
+  </tr>
+  <tr>
+   <td width="151" valign="middle" align="right"
+   style="font-family: Monotype Corsiva; color: #FFFFFF; font-weight: bold">Ring<b><font
+    face="Monotype Corsiva"> :</font></b></td>
+   <td style="font-family: Monotype Corsiva; color: #FFFFFF; font-weight: bold"
+   valign="middle" align="left" width="279"><input onfocus="blur()" type="text"
+    name="yourring" size="55"
+    style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000"></td>
+  </tr>
+ </table>
+ </span>
+ <!-- Storyline -->
+ <span style="position: absolute; left: 0; top: 584; z-index: 1"><textarea onfocus="blur()" name="storyline" style="scrollbar-face-color: #FFFFFF; scrollbar-shadow-color: gray; scrollbar-highlight-color: gray; scrollbar-3dlight-color: silver; scrollbar-darkshadow-color: #000000; scrollbar-track-color: #000000; scrollbar-arrow-color: darkgray; font-family: Monotype Corsiva; font-size: 14 pt; font-weight: bold; background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000" rows="8" cols="105">It has been ten years since you were made king. There is now only one other kingdom that rivals yours in size and strength. Their king is known to be wise and peaceful. You have grown to be friends and together have kept peace throughout the land. So when you receive a message that he needs you to come see him urgently you don't hesitate to plan a trip to his castle. You pick a few of your best soldiers to accompany you and set out the next day.</textarea>
+ </span>
+ <!-- Hero -->
+ <span style="position: absolute; left: 0; top: 25; z-index: 1">
+ <img border="0" src="../images/female.bmp" width="205" height="205">
+ </span>
+ <!-- Monster -->
+ <span style="position: absolute; left: 819; top: 25; z-index: 1">
+ <img border="0" src="monster/auto.png" width="205" height="205">
+ </span>
+ <!-- Buttons (Attack, Heal & Walk) -->
+ <span style="position: absolute; left: 0; top: 212; width: 950; height: 27">&nbsp;
+ <table width="1025" cellspacing="0" cellpadding="0">
+  <tr>
+   <td align="center" width="241" valign="top">
+    <p align="center"><a onclick="maxlife()"><input type="button"
+    style="background-color: #000000; color: #FFFFFF; border: 1 solid #000000"
+    name="Submit" value="HEAL cost=25$" onclick="heal()"><input
+    type="button" name="attack" value="Attack" onclick="attacker()"
+    style="background-color: #000000; color: #FFFFFF; border: 1 solid #000000"></a></td>
+   <td align="right" valign="top" width="241">
+    <p align="center"></td>
+   <td align="center" valign="top" width="60" background="../images/center.bmp"><a><img
+    border="0" src="../images/walk.bmp" onclick="opponent()" id="fpAnimswapImgFP1"
+    name="fpAnimswapImgFP1" dynamicanimation="fpAnimswapImgFP1"
+    lowsrc="../images/walk4.bmp"
+    onmouseout="document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].imgRolln"
+    onmouseover="document['fpAnimswapImgFP1'].imgRolln=document['fpAnimswapImgFP1'].src;document['fpAnimswapImgFP1'].src=document['fpAnimswapImgFP1'].lowsrc;"
+    width="60" height="24"></a></td>
+   <td align="center" valign="top" width="482">
+    <font face="Monotype Corsiva"><b><a onclick="javascript:window.location.reload();">Restart
+    Game</a></b></font>
+   </td>
+  </tr>
+ </table>
+ </span>
+ <div style="position: absolute; top: 1; left: 1; width: 950; height: 207">
+  <div style="position: absolute; top: 25; left: 0; width: 950; height: 207">
+  <table border="0" cellpadding="0" cellspacing="0" width="1024" height="133"
+  style="font-family: Monotype Corsiva; font-weight: bold">
+   <tr>
+    <td width="482" height="14%" valign="top" align="right">
+     <p align="right">Name : <input type="text" name="name" onfocus="blur()"
+     size="21"
+     style="color: #FFFFFF; background-color: #000000; font-family: Monotype Corsiva; font-weight: bold; font-size: 12 pt; border-style: solid; border-color: #000000"></td>
+    <td width="60" height="133" rowspan="7"><font face="Monotype Corsiva"><img
+     border="0" src="../images/center.bmp" width="60" height="205"></font></td>
+    <td width="482" height="14%" valign="middle" align="left">
+     <p align="left"><input type="text" name="badguy" onfocus="blur()" size="21"
+     style="color: #FFFFFF; background-color: #000000; border-style: solid; border-color: #000000">
+     : Name</p>
+    </td>
+   </tr>
+   <tr>
+    <td width="482" height="14%" valign="middle" align="right"><b><font
+     face="Monotype Corsiva">Gold : <input
+     style="background-color: #000000; color: #FFFFFF; border: 1 solid #000000"
+     type="text" name="money" value="100" size="9" onfocus="blur()"></font></b></td>
+    <td width="482" height="14%" valign="middle" align="left"><input
+     type="text" name="type" onfocus="blur()" size="21"
+     style="color: #FFFFFF; background-color: #000000; border-style: solid; border-color: #000000">
+     : Type</td>
+   </tr>
+   <tr>
+    <td width="482" height="14%" valign="middle" align="right"><b><font
+     face="Monotype Corsiva">Life : <input
+     style="background-color: #000000; color: #FFFFFF; border: 1 solid #000000"
+     type="text" name="life" value="50" size="9" onfocus="blur()"></font></b></td>
+    <td width="482" height="14%" valign="middle" align="left"><input
+     type="text" onfocus="blur()" name="badlife" size="9"
+     style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000">&nbsp;:
+     Life</td>
+   </tr>
+   <tr>
+    <td width="482" height="14%" valign="middle" align="right"><b><font
+     face="Monotype Corsiva">Attack Damage : <input
+     style="background-color: #000000; color: #FFFFFF; border: 1 solid #000000"
+     type="text" name="attackdamage" value="5" size="9" onfocus="blur()"></font></b></td>
+    <td width="482" height="14%" valign="middle" align="left"><input
+     type="text" onfocus="blur()" name="enemyattack"
+     style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000"
+     size="9"> : Attack Damage</td>
+   </tr>
+   <tr>
+    <td width="482" height="14%" valign="middle" align="right"><b><font
+     face="Monotype Corsiva">Armor : <input
+     style="background-color: #000000; color: #FFFFFF; border: 1 solid #000000"
+     type="text" name="armorclass" value="20" size="9" onfocus="blur()"></font></b></td>
+    <td width="482" height="14%" valign="middle" align="left"><input
+     type="text" onfocus="blur()" name="enemyarmor" size="9"
+     style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000">
+     : Armor</td>
+   </tr>
+   <tr>
+    <td width="482" height="14%" valign="middle" align="right"><b><font
+     face="Monotype Corsiva">Experience : <input
+     style="background-color: #000000; color: #FFFFFF; border: 1 solid #000000"
+     type="text" name="experience" value="0" size="9" onfocus="blur()"></font></b></td>
+    <td width="482" height="14%" valign="middle" align="left">Item<input
+     type="text" onfocus="blur()" name="item1" size="28"
+     style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000"
+     onclick="buyitem1()"></td>
+   </tr>
+   <tr>
+    <td width="482" height="14%" valign="middle" align="right"><b><font
+     face="Monotype Corsiva">Level : <input
+     style="background-color: #000000; color: #FFFFFF; border: 1 solid #000000"
+     type="text" name="level" value="1" size="9" onfocus="blur()"></font></b></td>
+    <td width="482" height="14%" valign="middle" align="left">Item<input
+     type="text" onfocus="blur()" name="item2" size="28"
+     style="background-color: #000000; color: #FFFFFF; border-style: solid; border-color: #000000"
+     onclick="buyitem2()"></td>
+   </tr>
+  </table>
+  </div>
+ </div>
+ <!--Player & Enemy. End.-->
+ 
+ 
+ <!--Hidden inputs.-->
+ <input type="hidden" name="swordbonus" value="1" size="-1"><input type="hidden"
+ name="shieldbonus" value="0" size="-1"><input type="hidden" name="armorbonus"
+ value="0" size="-1"><input type="hidden" name="amuletbonus" value="0" size="-1"><input
+ type="hidden" name="ringbonus" value="0" size="-1"><input type="hidden"
+ name="healpower" value="20" size="-1"><input type="hidden" name="baldo"
+ value="0" size="-1"><input type="hidden" name="story" value="0" size="-1"><input
+ type="hidden" name="xitem1" size="-1"><input type="hidden" name="xitem2"
+ size="-1">
+ <!--Hidden inputs end-->
+</form>
+
+</body>
+</html>

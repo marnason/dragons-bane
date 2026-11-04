@@ -1,0 +1,32 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>The Golden Sword</title>
+<script>
+function master() {
+	window.close()
+}
+</script>
+</head>
+
+<frameset rows="64" framespacing="0" border="0" frameborder="0">
+  <noframes>
+  <body topmargin="0" leftmargin="0">
+  I'm am sorry but your browser cannot show this game made by <b><i>Thunder Studios</i>.</b>
+  <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Call 00298266796 or 004560774808 for more information.<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This number's
+  only works if you live in the Faroe Islands or Danmark.</p>
+  <p align="left"></p>
+  <p align="left"></p>
+  <p align="left"></p>
+  <p align="right"><b><i>Thunder Studios</i></b></p>
+  </body>
+  </noframes>
+  <frame name="thegame" scrolling="no" noresize src="thegame.htm">
+</frameset>
+
+</html>
